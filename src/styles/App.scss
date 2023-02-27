@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('../styles/reset.scss');
+@import url('../styles/keyframes.scss');
+
+@font-face {
+  font-family: "MyInter";
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Regular.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "MyInter";
+  font-display: swap;
+  src: url("../assets/fonts/Inter-SemiBold.woff2");
+  font-weight: 700;
+}
+
+:root {
+  --ff: 'MyInter', sans-serif;
+  --white: #fff;
+  --black: #252552;
+  --accent: #6368E2;
+  --shadow-btn: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --linear-btn: linear-gradient(90deg, #6368E2 0%, #2A2C6A 100%);
+}
+
+html, body, #root, .App {
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--ff);
+}
