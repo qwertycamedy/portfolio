@@ -21,16 +21,51 @@
 :root {
   --ff: 'MyInter', sans-serif;
   --white: #fff;
-  --black: #252552;
+
+  --br: 1.5rem;
+
+  --dark-bg: #0F0E18;
+  --dark-bg-p: #020013;
   --accent: #6368E2;
+
   --shadow-btn: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --linear-btn: linear-gradient(90deg, #6368E2 0%, #2A2C6A 100%);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 html, body, #root, .App {
   min-height: 100vh;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: var(--ff);
+  font-size: 1.4rem;
+  background-color: var(--dark-bg);
+  color: var(--white);
 }
+
+.page {
+  position: relative;
+  right: 20px;
+  background-color: var(--dark-bg-p);
+  width: 100%;
+  height: calc(100vh - 4rem);
+  border-radius: var(--br);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 2rem;
+}
+
+@import url('./navbar.scss')

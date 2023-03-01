@@ -1,0 +1,67 @@
+.switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 6.2rem;
+    height: 3rem;
+    border-radius: 50px;
+    background-color: var(--dark-bg-p);
+    position: relative;
+    padding: .5rem;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 3.2rem;
+        height: 3.2rem;
+        left: -.2rem;
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+        background-color: var(--accent);
+        border-radius: 50%;
+        transition: transform .25s linear, left .25s linear;
+    }
+
+    &.unswitched {
+        .two {
+            opacity: .35;
+        }
+    }
+
+    &ed {
+        .one {
+            opacity: .35;
+        }
+    }
+
+    @media(any-hover:hover) {
+        &:hover {
+            &:before {
+                transform: translateY(-50%) scale(1.15);
+            }
+        }
+        &.unswitched:hover {
+            .one {
+                transform: scale(1.15);
+            }
+        }
+        
+        &.switched:hover {
+            .two {
+                transform: scale(1.15);
+            }
+        }
+    }
+
+    &ed {
+        &:before {
+            left: 3rem;
+        }
+    }
+}
+
+.one, .two {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+    transition: transform .25s linear, opacity .25s linear;
+}
