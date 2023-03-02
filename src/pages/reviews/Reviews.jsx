@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { AppContext } from '../../Context'
 
 const Reviews = () => {
+  const {t} = useContext(AppContext)
   return (
-    <div className='page'>Reviews</div>
+    <div className='page'>{t('Reviews')}</div>
   )
 }
 

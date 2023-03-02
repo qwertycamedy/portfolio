@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { AppContext } from '../../Context'
 
 const About = () => {
+  const {t} = useContext(AppContext)
   return (
-    <div className='page'>About</div>
+    <div className='page'>{t('About')}</div>
   )
 }
 

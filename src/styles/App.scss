@@ -15,27 +15,44 @@
   font-family: "MyInter";
   font-display: swap;
   src: url("../assets/fonts/Inter-SemiBold.woff2");
-  font-weight: 700;
+  font-weight: 600;
 }
 
 :root {
   --ff: 'MyInter', sans-serif;
   --white: #fff;
+  --white-pure: #EFEEF6;
+  --accent: #6368E2;
+  --black-pure: #0F0E18;
+  --black: #020013;
 
   --br: 1.5rem;
 
-  --dark-bg: #0F0E18;
-  --dark-bg-p: #020013;
-  --accent: #6368E2;
+  --bg: var(--white-pure);
+  --bg-p: var(--white);
+  --c: var(--black);
+  --switch-fill: var(--white-pure);
+  --switch-fill-current: var(--white);
+  --switch-opacity: 1;
 
-  --shadow-btn: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-btn: 0px 5px 30px rgba(0, 0, 0, 0.1);
   --linear-btn: linear-gradient(90deg, #6368E2 0%, #2A2C6A 100%);
+}
+
+.dark {
+  --bg: var(--black-pure);
+  --bg-p: var(--black);
+  --c: var(--white);
+  --switch-fill-current: var(--white);
+  --switch-fill: var(--white);
+  --switch-opacity: .35;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  transition: color .1s linear, background-color .2s linear;
 }
 
 html, body, #root, .App {
@@ -49,14 +66,15 @@ html {
 body {
   font-family: var(--ff);
   font-size: 1.4rem;
-  background-color: var(--dark-bg);
-  color: var(--white);
+  background-color: var(--bg);
+  color: var(--c);
 }
 
 .page {
   position: relative;
-  right: 20px;
-  background-color: var(--dark-bg-p);
+  right: 2rem;
+  top: 2rem;
+  background-color: var(--bg-p);
   width: 100%;
   height: calc(100vh - 4rem);
   border-radius: var(--br);
@@ -66,6 +84,10 @@ body {
   gap: 2rem;
 
   padding: 2rem;
+}
+
+.opacity04 {
+  opacity: .4;
 }
 
 @import url('./navbar.scss')

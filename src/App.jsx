@@ -8,12 +8,28 @@ import Projects from "./pages/projects/Projects";
 import Reviews from "./pages/reviews/Reviews";
 import Skills from "./pages/skills/Skills";
 import "./styles/App.scss";
+import i18n from './i18n';
+import { useTranslation } from "react-i18next";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
+  const { t } = useTranslation();
+  const [langMode, setLangMode] = useLocalStorage('language', 'ru');
+
+  const onLangChange = () => {
+      if (langMode === 'en') {
+          i18n.changeLanguage('ru');
+          setLangMode('ru');
+      } else if (langMode === 'ru') {
+          i18n.changeLanguage('en');
+          setLangMode('en');
+      }
+  };
+
   return (
     <BrowserRouter>
-      <AppContext.Provider value={{ }}>
-        <div className="App flex items-center w-full justify-center">
+      <AppContext.Provider value={{ t, langMode, onLangChange }}>
+        <div className="App flex justify-center w-full">
           <Navbar />
 
           <Routes>
