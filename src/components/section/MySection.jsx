@@ -1,9 +1,9 @@
 import React from 'react'
-import cl from './Section.module.scss'
+import cl from './MySection.module.scss'
 
-const Section = ({children, ...props}) => {
+const MySection = ({children, classNames, ...props}) => {
   return (
-    <section className={cl.section} {...props}>
+    <section className={cl.section + ` ${classNames}`} {...props}>
         <div className={cl.container}>
           <div className={cl.inner}>
             {children}
@@ -13,4 +13,4 @@ const Section = ({children, ...props}) => {
   )
 }
 
-export default Section
+export default MySection

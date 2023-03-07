@@ -1,0 +1,17 @@
+.section {
+    background: var(--bg);
+    border-radius: var(--br);
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    padding: 4.5rem 7.5rem;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 1.5rem;
+}

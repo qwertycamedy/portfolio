@@ -1,10 +1,11 @@
 import React from 'react'
 import meImg from '../../assets/img/me.jpg'
+import cl from './MeImg.module.scss'
 
-const MeImg = ({w, h}) => {
+const MeImg = ({w, h, classNames}) => {
   return (
     <img
-      className="navbar__img"
+      className={`${cl.img} ${classNames}`}
       src={meImg}
       loading="lazy"
       width={w}

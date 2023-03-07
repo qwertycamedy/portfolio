@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('../styles/reset.scss');
-@import url('../styles/keyframes.scss');
+@import url("../styles/reset.scss");
+@import url("../styles/keyframes.scss");
 
 @font-face {
   font-family: "MyInter";
@@ -14,17 +14,17 @@
 @font-face {
   font-family: "MyInter";
   font-display: swap;
-  src: url("../assets/fonts/Inter-SemiBold.woff2");
-  font-weight: 600;
+  src: url("../assets/fonts/Inter-Medium.woff2");
+  font-weight: 500;
 }
 
 :root {
-  --ff: 'MyInter', sans-serif;
-  --white: #fff;
-  --white-pure: #EFEEF6;
-  --accent: #6368E2;
-  --black-pure: #0F0E18;
-  --black: #020013;
+  --ff: "MyInter", sans-serif;
+  --white: #ffffff;
+  --white-pure: #efeef6;
+  --accent: #6368e2;
+  --black-pure: #0f0e18;
+  --black: #191726;
 
   --br: 1.5rem;
 
@@ -34,9 +34,10 @@
   --switch-fill: var(--white-pure);
   --switch-fill-current: var(--white);
   --switch-opacity: 1;
+  --opacity04: 1;
 
-  --shadow-btn: 0px 5px 30px rgba(0, 0, 0, 0.1);
-  --linear-btn: linear-gradient(90deg, #6368E2 0%, #2A2C6A 100%);
+  --shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  --linear-btn: linear-gradient(90deg, #6368e2 0%, #8e92f3 100%);
 }
 
 .dark {
@@ -45,17 +46,23 @@
   --c: var(--white);
   --switch-fill-current: var(--white);
   --switch-fill: var(--white);
-  --switch-opacity: .35;
+  --switch-opacity: 0.35;
+  --opacity04: 0.4;
+  --shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  --linear-btn: linear-gradient(90deg, #6368e2 0%, #2a2c6a 100%);
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-  transition: color .1s linear, background-color .2s linear;
+  transition: background-color 0.3s linear, color 0.03s linear;
 }
 
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   min-height: 100vh;
 }
 
@@ -66,28 +73,113 @@ html {
 body {
   font-family: var(--ff);
   font-size: 1.4rem;
+  line-height: 1.35;
   background-color: var(--bg);
   color: var(--c);
 }
 
-.page {
-  position: relative;
-  right: 2rem;
-  top: 2rem;
-  background-color: var(--bg-p);
-  width: 100%;
-  height: calc(100vh - 4rem);
-  border-radius: var(--br);
-
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  padding: 2rem;
+.App {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .opacity04 {
-  opacity: .4;
+  opacity: var(--opacity04);
 }
 
-@import url('./navbar.scss')
+.title {
+  &-main {
+    font-weight: 500;
+    font-size: 5.6rem;
+    line-height: 6.8rem;
+    &-pl {
+      padding-left: 7.5rem;
+    }
+  }
+
+  &-section {
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+    padding-bottom: 1.4rem;
+    width: max-content;
+    position: relative;
+    &:after {
+      left: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      display: flex;
+      width: 120%;
+      height: 0.3rem;
+      border-radius: var(--br);
+      background: linear-gradient(
+        90deg,
+        #3f43a7 35.82%,
+        rgba(0, 0, 0, 0) 100%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+  }
+}
+
+.swiper {
+  &-wrapper {
+    align-items: center;
+  }
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.25s linear, visibility 0.25s linear,
+    pointer-events 0.25s linear;
+
+  &__active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .modal {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+}
+.modal {
+  background: var(--bg-p);
+  border-radius: var(--br);
+  padding: 2rem;
+  max-width: 40rem;
+  gap: 3.2rem;
+  width: 100%;
+  opacity: .9;
+
+  transform: translate(0, -50px) scale(.7);
+
+  transition: transform .3s linear;
+}
+
+.reverse-img {
+  transform: scaleX(-1);
+}
+
+.page {
+  padding: 25px;
+}
+
+
+@import url("./navbar.scss");

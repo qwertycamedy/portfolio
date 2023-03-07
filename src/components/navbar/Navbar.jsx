@@ -5,13 +5,6 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 import MyLogo from "../../UI/logo/MyLogo";
 
-import MeImg from "../../UI/meImg/MeImg";
-
-import soc1 from "../../assets/img/tg.svg";
-import soc2 from "../../assets/img/em.svg";
-import soc3 from "../../assets/img/uw.svg";
-import soc4 from "../../assets/img/wl.svg";
-
 import nav1 from "../../assets/img/nav1.svg";
 import nav2 from "../../assets/img/nav2.svg";
 import nav3 from "../../assets/img/nav3.svg";
@@ -22,30 +15,9 @@ import nav6 from "../../assets/img/nav6.svg";
 import MyBtnC from "../../UI/btn-c/MyBtnC";
 
 const Navbar = () => {
-  const { t, langMode, onLangChange } = useContext(AppContext);
+  const { t, langMode, onLangChange, contacts, onToggleContacts } =
+    useContext(AppContext);
 
-  const [socLinks] = useState([
-    {
-      id: 1,
-      img: soc1,
-      to: "https://t.me/qwertycamedy",
-    },
-    {
-      id: 2,
-      img: soc2,
-      to: "qwertycamedy@gmail.com",
-    },
-    {
-      id: 3,
-      img: soc3,
-      to: "https://www.upwork.com/freelancers/qwertycamedy",
-    },
-    {
-      id: 4,
-      img: soc4,
-      to: "https://www.weblancer.net/users/qwertycamedy/",
-    },
-  ]);
   const [navLinks] = useState([
     {
       id: 1,
@@ -101,36 +73,62 @@ const Navbar = () => {
     <aside className="navbar">
       <MyLogo classnames="navbar__logo" />
       <div className="navbar__inner">
-        <MeImg w="100" h="100" classnames="navbar__img" />
+        <MyLogo classnames="navbar__img" />
 
-        <h3 className="navbar__title sb">{t('Adil Kairbekov')}</h3>
+        <h3 className="navbar__title sb">{t("Adil Kairbekov")}</h3>
 
-        <p className="navbar__subtitle">{t('Frontend Developer')}</p>
+        <p className="navbar__subtitle">{t("Frontend Developer")}</p>
 
         <ul className="navbar__social social">
-          {socLinks.map(socLink => (
-            <li className="navbar__social-item social-item" key={socLink.id}>
-              <Link to={socLink.to} target="_blank">
-                <MyBtnC w="20" h="20" img={socLink.img} />
-              </Link>
-            </li>
-          ))}
+          {contacts.map(contact =>
+            contact.id === 2 ? (
+              <li className="navbar__social-item social-item" key={contact.id}>
+                <Link
+                  to="#"
+                  onClick={e => {
+                    window.location.href = "mailto:qwertycamedy@gmail.com";
+                    e.preventDefault();
+                  }}
+                >
+                  <MyBtnC w="20" h="20" img={contact.img} />
+                </Link>
+              </li>
+            ) : (
+              <li className="navbar__social-item social-item" key={contact.id}>
+                <Link to={contact.to} target="_blank">
+                  <MyBtnC w="20" h="20" img={contact.img} />
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         <ul className="navbar__menu">
-          {navLinks.map(navLink => (
-            <li className="navbar__menu-item" key={navLink.id}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "navbar__menu-link active" : "navbar__menu-link"
-                }
-                to={navLink.to}
-              >
-                <MyBtnC w="18" h="18" img={navLink.img} />
-                <span className="text">{t(navLink.text)}</span>
-              </NavLink>
-            </li>
-          ))}
+          {navLinks.map(navLink =>
+            navLink.id !== 6 ? (
+              <li className="navbar__menu-item" key={navLink.id}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "navbar__menu-link active" : "navbar__menu-link"
+                  }
+                  to={navLink.to}
+                >
+                  <MyBtnC w="18" h="18" img={navLink.img} />
+                  <span className="text">{t(navLink.text)}</span>
+                </NavLink>
+              </li>
+            ) : (
+              <li className="navbar__menu-item" key={navLink.id}>
+                <div
+                  className="navbar__menu-link cursor-pointer"
+                  onClick={onToggleContacts}
+                >
+                  <MyBtnC w="18" h="18" img={navLink.img} />
+                  <span className="text">{t(navLink.text)}</span>
+                </div>
+              </li>
+            )
+          )}
         </ul>
 
         <ul className="navbar__switch-list">
@@ -177,8 +175,8 @@ const Navbar = () => {
               }
               onClick={onLangChange}
             >
-              <span className={langMode === 'en' ? 'opacity04' : ''}>ru</span>
-              <span className={langMode === 'ru' ? 'opacity04' : ''}>en</span>
+              <span className={langMode === "en" ? "opacity04" : ""}>ru</span>
+              <span className={langMode === "ru" ? "opacity04" : ""}>en</span>
             </button>
           </li>
         </ul>

@@ -12,6 +12,7 @@
   .navbar__logo, .navbar__burger {
     display: none;
   }
+
   .navbar__burger {
     --burger-width: 30px;
     --burger-height: 30px;
@@ -91,6 +92,15 @@
   .navbar__img {
     border-radius: 50%;
     margin-bottom: 20px;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: inherit;
+      width: inherit;
+    }
   }
   .navbar__title {
     font-size: 1.8rem;
@@ -208,13 +218,13 @@
 
     &.unswitched {
         .switch__two {
-            opacity: .35;
+            opacity: var(--opacity04);
         }
     }
 
     &ed {
         .switch__one {
-            opacity: .35;
+            opacity: var(--opacity04);
         }
     }
 

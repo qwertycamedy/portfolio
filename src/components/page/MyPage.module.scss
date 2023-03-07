@@ -1,0 +1,17 @@
+.page {
+  position: relative;
+  right: 1.5rem;
+  top: 1.5rem;
+  background-color: var(--bg-p);
+  width: 100%;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  border-radius: var(--br);
+  box-shadow: var(--shadow);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 1.5rem;
+}

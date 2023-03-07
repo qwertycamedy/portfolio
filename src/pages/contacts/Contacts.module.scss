@@ -1,0 +1,34 @@
+.close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, -.7rem);
+    transition: opacity .25s linear, transform .25s linear;
+
+    svg {
+        width: inherit;
+        height: inherit;
+    }
+    @media(any-hover:hover) {
+        &:hover {
+            opacity: .5;
+            transform: translate(0, -.7rem) scale(1.2);
+        }
+    }
+}
+
+.link {
+    text-decoration: underline transparent;
+    transition: text-decoration .25s linear;
+    @media(any-hover: hover) {
+        &:hover {
+            text-decoration: underline currentColor;
+
+            button {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

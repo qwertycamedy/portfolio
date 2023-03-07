@@ -1,17 +1,18 @@
 .btn {
-    padding: 1.1rem 1.5rem;
+    padding: 1.1rem 4rem;
     width: max-content;
-    border-radius: 65px;
+    border-radius: 6.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1.5rem;
     background: var(--linear-btn);
     color: var(--white);
     transition: transform .2s linear, box-shadow .2s linear;
 
     @media(any-hover: hover) {
         &:hover {
-            box-shadow: var(--shadow-btn);
+            box-shadow: var(--shadow);
             transform: scale(1.05);
         }
     }

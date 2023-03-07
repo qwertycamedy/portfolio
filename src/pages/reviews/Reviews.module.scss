@@ -1,0 +1,43 @@
+.title {
+  padding-left: 1.5rem;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  gap: 1.5rem;
+}
+
+.outer {
+  > div {
+    padding: 1.5rem;
+    height: 100%; 
+    > div {
+        height: 100%;
+    }
+  }
+}
+
+.review {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  gap: 1.8rem;
+
+  &Text {
+    flex: 1 0 auto;
+  }
+
+    &InfoOuter {
+        flex: 0 0 auto;
+    }
+
+
+
+  &Title {
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 1.8rem;
+  }
+}
