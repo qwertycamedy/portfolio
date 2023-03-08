@@ -1,5 +1,12 @@
 
-
 .text {
     font-size: 1.8rem;
+}
+
+@media(max-width:1200px) {
+    .img {
+        display: flex;
+        margin: 0 auto 2.4rem;
+        float: unset;
+    }
 }

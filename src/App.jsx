@@ -1,17 +1,19 @@
-import { React, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
+import { React, useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { AppContext } from "./Context";
-import About from "./pages/about/About";
+import i18n from "./i18n";
+import { useTranslation } from "react-i18next";
+import { useLocalStorage } from "./hooks/useLocalStorage";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
+import About from "./pages/about/About";
 import Projects from "./pages/projects/Projects";
+import Project from "./pages/project/Project";
 import Reviews from "./pages/reviews/Reviews";
 import Skills from "./pages/skills/Skills";
 import Contacts from "./pages/contacts/Contacts";
 import "./styles/App.scss";
-import i18n from "./i18n";
-import { useTranslation } from "react-i18next";
-import { useLocalStorage } from "./hooks/useLocalStorage";
+import "./styles/_media.scss";
 import cover1 from "./assets/img/sneakers-square.webp";
 import cover2 from "./assets/img/toodoo.webp";
 import cover3 from "./assets/img/trify.webp";
@@ -37,16 +39,16 @@ function App() {
       id: 1,
       to: "",
       title: "Sneakers Square",
-      type: ["E-Shop", "SPA"],
+      type: ["E-Commerce", "SPA"],
       skills: ["React"],
       cover: cover1,
-      imgs: [cover1],
+      imgs: [cover1, cover1, cover1],
     },
     {
       id: 2,
       to: "",
       title: "Trify",
-      type: ["E-Shop", "Multipage"],
+      type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: cover3,
       imgs: [cover3],
@@ -55,7 +57,7 @@ function App() {
       id: 3,
       to: "",
       title: "Trify",
-      type: ["E-Shop", "Multipage"],
+      type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: cover3,
       imgs: [cover3],
@@ -64,7 +66,7 @@ function App() {
       id: 4,
       to: "",
       title: "Trify",
-      type: ["E-Shop", "Multipage"],
+      type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: cover3,
       imgs: [cover3],
@@ -82,7 +84,7 @@ function App() {
       id: 6,
       to: "",
       title: "Trify",
-      type: ["E-Shop", "Multipage"],
+      type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: cover3,
       imgs: [cover3],
@@ -91,7 +93,7 @@ function App() {
       id: 7,
       to: "",
       title: "Trify",
-      type: ["E-Shop", "Multipage"],
+      type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: cover3,
       imgs: [cover3],
@@ -100,7 +102,7 @@ function App() {
       id: 8,
       to: "",
       title: "Trify",
-      type: ["E-Shop", "Multipage"],
+      type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: cover3,
       imgs: [cover3],
@@ -255,6 +257,12 @@ function App() {
     setToggleContacts(!toggleContacts);
   };
 
+  //scrollToTop
+  const {pathname} = useLocation();
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [pathname])
+
   //translate language
   const { t } = useTranslation();
   const [langMode, setLangMode] = useLocalStorage("language", "ru");
@@ -269,7 +277,6 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
       <AppContext.Provider
         value={{
           t,
@@ -291,12 +298,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="project/:id" element={<Project />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="skills" element={<Skills />} />
           </Routes>
         </div>
       </AppContext.Provider>
-    </BrowserRouter>
   );
 }
 

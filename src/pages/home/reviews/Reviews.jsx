@@ -19,7 +19,7 @@ const Reviews = ({ t }) => {
   const navPrev = React.useRef(null);
   const navNext = React.useRef(null);
   return (
-    <MySection classNames="min-w-0">
+    <MySection classNames={`${cl.section} min-w-0 relative`}>
       <div className="flex justify-between items-center min-w-0">
         <h3 className={cl.title + " title-section"}>{t("Reviews")}</h3>
         <div className={cl.sliderNav + " flex items-center gap-4 min-w-0"}>
@@ -50,6 +50,22 @@ const Reviews = ({ t }) => {
         navigation={{
           prevEl: navPrev.current,
           nextEl: navNext.current,
+        }}
+        breakpoints={{
+          320: {
+            spaceBetween: 12,
+            slidesPerView: 1
+          },
+
+          550: {
+            spaceBetween: 12,
+            slidesPerView: 2
+          },
+
+          1000: {
+            spaceBetween: 25,
+            slidesPerView: 3
+          }
         }}
         onSwiper={swiper => {
           setTimeout(() => {

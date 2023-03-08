@@ -1,6 +1,6 @@
 .btn {
     background-color: var(--accent);
-    transition: transform .25s linear;
+    transition: transform .25s linear, opacity .25s linear;
     padding: 5px;
 
     display: flex;

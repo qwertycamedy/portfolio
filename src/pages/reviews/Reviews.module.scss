@@ -41,3 +41,9 @@
     font-size: 1.8rem;
   }
 }
+
+@media(max-width: 1200px) {
+  .reviews {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+}

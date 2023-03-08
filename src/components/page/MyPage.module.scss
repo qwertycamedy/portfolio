@@ -14,4 +14,12 @@
   gap: 2rem;
 
   padding: 1.5rem;
+
+  @media(max-width: 1200px) {
+    box-shadow: unset;
+    right: 0;
+    top: 0;
+    max-height: 100%;
+    margin-top: calc(1.5rem + 65px);
+  }
 }

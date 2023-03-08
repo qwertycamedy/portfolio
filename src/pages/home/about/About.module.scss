@@ -1,0 +1,15 @@
+@media(max-width: 1200px) {
+    .title {
+        margin-bottom: 2.5rem;
+    }
+    .flex {
+        flex-direction: column-reverse;
+
+    }
+    .info {
+        max-width: 270px !important;
+        text-align: center;
+        align-items: center;
+        gap: 2.5rem !important;
+    }
+}

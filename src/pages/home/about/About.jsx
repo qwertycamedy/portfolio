@@ -17,7 +17,7 @@ const About = ({t}) => {
           </p>
           <MyLink to="about" text="More!" />
         </div>
-        <MeImg w={175} h={175} classNames='reverse-img' />
+        <MeImg w={175} h={175} classNames={cl.img + ' reverse-img'} />
       </div>
     </MySection>
   );

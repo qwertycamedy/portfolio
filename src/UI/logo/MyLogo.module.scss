@@ -3,4 +3,11 @@
     height: 31px;
     object-fit: contain;
     max-width: unset;
+    transition: opacity .25s linear;
+
+    @media(any-hover: hover) {
+        &:hover {
+            opacity: .7;
+        }
+    }
 }

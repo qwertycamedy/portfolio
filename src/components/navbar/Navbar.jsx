@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AppContext } from "../../Context";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import burgerImg from "../../assets/img/burger.svg";
 
 import MyLogo from "../../UI/logo/MyLogo";
 
@@ -11,6 +12,9 @@ import nav3 from "../../assets/img/nav3.svg";
 import nav4 from "../../assets/img/nav4.svg";
 import nav5 from "../../assets/img/nav5.svg";
 import nav6 from "../../assets/img/nav6.svg";
+
+import logoImg from '../../assets/img/logo.svg'
+import meImg from '../../assets/img/me.jpg'
 
 import MyBtnC from "../../UI/btn-c/MyBtnC";
 
@@ -69,11 +73,18 @@ const Navbar = () => {
     setThemeMode(currentValue => (currentValue === "dark" ? "light" : "dark"));
   };
 
+  const [burger, setBurger] = useState(false);
+
+  const onBurger = () => {
+    setBurger(!burger);
+    document.body.classList.toggle('overflow-h')
+  };
+
   return (
     <aside className="navbar">
-      <MyLogo classnames="navbar__logo" />
-      <div className="navbar__inner">
-        <MyLogo classnames="navbar__img" />
+      <MyLogo classnames="navbar__logo" img={logoImg} />
+      <div className={burger ? "navbar__inner active" : "navbar__inner"} onClick={onBurger}>
+        <MyLogo classnames="navbar__img" img={window.innerWidth < 550 ? meImg : logoImg} />
 
         <h3 className="navbar__title sb">{t("Adil Kairbekov")}</h3>
 
@@ -181,10 +192,15 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <button className="navbar__burger burger">
+      <button
+        className={
+          burger ? "navbar__burger burger active" : "navbar__burger burger"
+        }
+        onClick={onBurger}
+      >
         <img
           className="navbar__burger-img burger-img"
-          src="img/burger.svg"
+          src={burgerImg}
           loading="lazy"
           width="32"
           height="32"

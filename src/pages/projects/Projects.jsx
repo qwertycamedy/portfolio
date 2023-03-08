@@ -15,7 +15,7 @@ const Projects = () => {
       <div className={cl.projects}>
         {projects.map(project => (
           <MySection classNames={cl.outer} key={project.id}>
-            <Link to={project.to} className={cl.project}>
+            <Link to={`/project/${project.id - 1}`} className={cl.project}>
               <img
                 className={cl.projectCover}
                 src={project.cover}

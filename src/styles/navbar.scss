@@ -14,9 +14,9 @@
   }
 
   .navbar__burger {
-    --burger-width: 30px;
-    --burger-height: 30px;
-    --burger-line-height: 6px;
+    --burger-width: 3rem;
+    --burger-height: 3rem;
+    --burger-line-height: .6rem;
     position: relative;
     border: none;
     padding: 0;
@@ -268,7 +268,7 @@
   justify-content: center;
   fill: var(--switch-fill);
   color: var(--switch-fill);
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 0.9;
 }

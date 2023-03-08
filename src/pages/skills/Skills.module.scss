@@ -30,13 +30,11 @@
     font-weight: 500;
   }
 
-  @media (any-hover: hover) {
     &:hover {
       .info {
         opacity: 1;
       }
     }
-  }
 }
 
 .info {

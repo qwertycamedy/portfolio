@@ -9,7 +9,7 @@ const Skills = ({ t }) => {
   const { skills } = useContext(AppContext);
   return (
     <MySection>
-      <div className="flex justify-between items-center min-w-0">
+      <div className={cl.flex + " flex justify-between items-center min-w-0"}>
         <h3 className={cl.title + " title-section"}>{t("Skills")}</h3>
         <MyLink to="skills" text="More!" />
       </div>

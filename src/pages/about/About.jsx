@@ -13,7 +13,7 @@ const About = () => {
       <MySection>
         <div className={cl.flex + " flex flex-col justify-between gap-8"}>
           <p className={cl.text}>
-            <MeImg classNames={"float-right reverse-img"} w={300} h={300} />
+            <MeImg classNames={`${cl.img} float-right reverse-img`} w={300} h={300} />
             {t("about-1")} <br />
             <br />
             {t("about-2")} <br />
