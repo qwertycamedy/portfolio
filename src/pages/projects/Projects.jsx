@@ -50,7 +50,7 @@ const Projects = () => {
               </MyBtn>
             </Link>
           </MySection>
-        ))}
+        )).reverse()}
       </div>
     </MyPage>
   );

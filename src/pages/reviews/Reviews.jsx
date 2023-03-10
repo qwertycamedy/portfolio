@@ -6,7 +6,6 @@ import MyBtn from "../../UI/btn/MyBtn";
 import rImg from "../../assets/img/arrow-right.svg";
 import cl from "./Reviews.module.scss";
 import MySection from "../../components/section/MySection";
-import MyLink from "../../UI/link/MyLink";
 
 const Reviews = () => {
   const { t, reviews } = useContext(AppContext);
@@ -25,7 +24,7 @@ const Reviews = () => {
                   <h6 className={cl.reviewTitle}>{t(review.title)}</h6>
                   <p className={cl.reviewService}>{t(review.service)}</p>
                 </div>
-                <Link>
+                <Link to={review.to} target='_blank'>
                   <MyBtn classNames={cl.reviewBtn}>
                     {t("Entire")}
                     <img

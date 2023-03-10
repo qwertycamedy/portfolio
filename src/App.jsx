@@ -14,9 +14,31 @@ import Skills from "./pages/skills/Skills";
 import Contacts from "./pages/contacts/Contacts";
 import "./styles/App.scss";
 import "./styles/_media.scss";
-import cover1 from "./assets/img/sneakers-square.webp";
-import cover2 from "./assets/img/toodoo.webp";
-import cover3 from "./assets/img/trify.webp";
+import snsqCover from "./assets/img/sneakers-square.webp";
+import todoCover from "./assets/img/toodoo.webp";
+import trifyCover from "./assets/img/trify.webp";
+import wotCover from "./assets/img/wotCover.png";
+import scanCover from "./assets/img/scantgCover.png";
+import scan1 from "./assets/img/scan1.png";
+import scan2 from "./assets/img/scan2.png";
+import scan3 from "./assets/img/scan3.png";
+import scan4 from "./assets/img/scan4.png";
+import todo1 from "./assets/img/todo1.png";
+import wot1 from "./assets/img/wot1.png";
+import wot2 from "./assets/img/wot2.png";
+import wot3 from "./assets/img/wot3.png";
+import wot4 from "./assets/img/wot4.png";
+import trify1 from "./assets/img/trify1.png";
+import trify4 from "./assets/img/trify4.png";
+import trify5 from "./assets/img/trify5.png";
+import trify6 from "./assets/img/trify6.png";
+import trify7 from "./assets/img/trify7.png";
+import trify8 from "./assets/img/trify8.png";
+import trify9 from "./assets/img/trify9.png";
+import sn4 from "./assets/img/sn4.png";
+import sn1 from "./assets/img/sn1.png";
+import sn2 from "./assets/img/sn2.png";
+import sn3 from "./assets/img/sn3.png";
 import {
   DiHtml5,
   DiCss3,
@@ -26,7 +48,13 @@ import {
   DiSass,
 } from "react-icons/di";
 import { FaFigma } from "react-icons/fa";
-import { SiPug, SiRedux, SiTailwindcss, SiTypescript, SiWebpack } from "react-icons/si"
+import {
+  SiPug,
+  SiRedux,
+  SiTailwindcss,
+  SiTypescript,
+  SiWebpack,
+} from "react-icons/si";
 import soc1 from "./assets/img/tg.svg";
 import soc2 from "./assets/img/em.svg";
 import soc3 from "./assets/img/uw.svg";
@@ -37,81 +65,54 @@ function App() {
   const [projects] = useState([
     {
       id: 1,
-      to: "",
-      title: "Sneakers Square",
-      type: ["E-Commerce", "SPA"],
+      to: "https://qwertycamedy.ru/sites/TooDoo/",
+      title: "TooDoo",
+      type: ["Todo app", "SPA"],
       skills: ["React"],
-      cover: cover1,
-      imgs: [cover1, cover1, cover1],
+      cover: todoCover,
+      imgs: [todoCover, todo1],
     },
     {
       id: 2,
-      to: "",
-      title: "Trify",
+      to: "https://qwertycamedy.ru/sites/tank/",
+      title: "WOT Accs",
       type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
-      cover: cover3,
-      imgs: [cover3],
+      cover: wotCover,
+      imgs: [wotCover, wot1, wot2, wot3, wot4],
     },
     {
       id: 3,
-      to: "",
+      to: "https://qwertycamedy.ru/sites/trify/",
       title: "Trify",
       type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
-      cover: cover3,
-      imgs: [cover3],
+      cover: trifyCover,
+      imgs: [trifyCover, trify9, trify1, trify4, trify5, trify6, trify7, trify8],
     },
     {
       id: 4,
-      to: "",
-      title: "Trify",
-      type: ["E-Commerce", "Multipage"],
+      to: "https://qwertycamedy.ru/sites/scan-tg/",
+      title: "Scan TG",
+      type: ["Landing-Page", "animations"],
       skills: ["HTML", "CSS", "JS"],
-      cover: cover3,
-      imgs: [cover3],
+      cover: scanCover,
+      imgs: [scanCover, scan1, scan2, scan3, scan4],
     },
     {
       id: 5,
-      to: "",
-      title: "TooDoo",
-      type: ["Planer", "SPA"],
+      to: "https://sneakers-square.qwertycamedy.ru/",
+      title: "Sneakers Square",
+      type: ["E-Commerce", "SPA"],
       skills: ["React"],
-      cover: cover2,
-      imgs: [cover2],
-    },
-    {
-      id: 6,
-      to: "",
-      title: "Trify",
-      type: ["E-Commerce", "Multipage"],
-      skills: ["HTML", "CSS", "JS"],
-      cover: cover3,
-      imgs: [cover3],
-    },
-    {
-      id: 7,
-      to: "",
-      title: "Trify",
-      type: ["E-Commerce", "Multipage"],
-      skills: ["HTML", "CSS", "JS"],
-      cover: cover3,
-      imgs: [cover3],
-    },
-    {
-      id: 8,
-      to: "",
-      title: "Trify",
-      type: ["E-Commerce", "Multipage"],
-      skills: ["HTML", "CSS", "JS"],
-      cover: cover3,
-      imgs: [cover3],
+      cover: snsqCover,
+      imgs: [snsqCover, sn4, sn1, sn2, sn3],
     },
   ]);
   const [reviews] = useState([
     {
       id: 1,
-      to: "weblancer.net/projects/html-verstka-32/verstka-lendinga-1153411/",
+      to: "https://www.weblancer.net/projects/html-verstka-32/verstka-lendinga-1153411/",
       title: "review-user-1",
       service: "Weblancer",
       text: "review-1",
@@ -132,24 +133,24 @@ function App() {
     },
     {
       id: 4,
-      to: "weblancer.net/projects/html-verstka-32/verstka-lendinga-1153411/",
-      title: "review-user-1",
+      to: "https://www.weblancer.net/projects/html-verstka-32/vyorstka-dizajn-maketov-1123304/",
+      title: "review-user-4",
       service: "Weblancer",
-      text: "review-1",
+      text: "review-4",
     },
     {
       id: 5,
-      to: "https://www.weblancer.net/projects/html-verstka-32/verstka-simplewealth-1112662/",
-      title: "review-user-2",
+      to: "https://www.weblancer.net/projects/html-verstka-32/verstka-lendinga-1140896/",
+      title: "review-user-5",
       service: "Weblancer",
-      text: "review-2",
+      text: "review-5",
     },
     {
       id: 6,
-      to: "https://www.weblancer.net/projects/html-verstka-32/verstka-maketa-sajta-1126387/",
-      title: "review-user-3",
+      to: "https://www.weblancer.net/projects/html-verstka-32/verstka-obnovlenij-sajta-1155164/",
+      title: "review-user-6",
       service: "Weblancer",
-      text: "review-3",
+      text: "review-6",
     },
   ]);
   const [skills] = useState([
@@ -258,10 +259,10 @@ function App() {
   };
 
   //scrollToTop
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0,0);
-  }, [pathname])
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   //translate language
   const { t } = useTranslation();
@@ -277,33 +278,33 @@ function App() {
   };
 
   return (
-      <AppContext.Provider
-        value={{
-          t,
-          langMode,
-          onLangChange,
-          projects,
-          reviews,
-          skills,
-          contacts,
-          toggleContacts,
-          onToggleContacts,
-        }}
-      >
-        <div className="App flex justify-center w-full">
-          <Navbar />
-          <Contacts />
+    <AppContext.Provider
+      value={{
+        t,
+        langMode,
+        onLangChange,
+        projects,
+        reviews,
+        skills,
+        contacts,
+        toggleContacts,
+        onToggleContacts,
+      }}
+    >
+      <div className="App flex justify-center w-full">
+        <Navbar />
+        <Contacts />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="project/:id" element={<Project />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="skills" element={<Skills />} />
-          </Routes>
-        </div>
-      </AppContext.Provider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="project/:id" element={<Project />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="skills" element={<Skills />} />
+        </Routes>
+      </div>
+    </AppContext.Provider>
   );
 }
 

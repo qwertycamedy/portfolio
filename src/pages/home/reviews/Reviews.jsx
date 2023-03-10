@@ -85,7 +85,7 @@ const Reviews = ({ t }) => {
               <SwiperSlide className={cl.slide} key={review.id}>
                 {
                   <Link
-                    to={review.path}
+                    to={review.to}
                     className={cl.slideContent}
                     target="_blank"
                   >

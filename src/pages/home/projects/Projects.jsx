@@ -127,7 +127,7 @@ const Projects = ({ t }) => {
                 }
               </SwiperSlide>
             )
-        )}
+        ).reverse()}
       </Swiper>
     </MySection>
   );

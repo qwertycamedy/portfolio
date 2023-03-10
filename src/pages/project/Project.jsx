@@ -66,7 +66,7 @@ const Project = () => {
             className={cl.slider + " min-w-0"}
           >
             {project.imgs.map((img, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className={cl.slide}>
                 <img
                   className={cl.projectImg}
                   src={img}
@@ -114,7 +114,7 @@ const Project = () => {
             </p>
           </div>
         </div>
-        <MyLink classNames={cl.projectBtn} text='To site' to={project.to} />
+        <MyLink classNames={cl.projectBtn} text='To site' to={project.to} target='_blank' />
         </div>
       </MySection>
     </MyPage>
