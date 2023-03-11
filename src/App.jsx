@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AppContext } from "./Context";
 import i18n from "./i18n";
 import { useTranslation } from "react-i18next";
@@ -278,6 +278,7 @@ function App() {
   };
 
   return (
+  <BrowserRouter>
     <AppContext.Provider
       value={{
         t,
@@ -305,6 +306,7 @@ function App() {
         </Routes>
       </div>
     </AppContext.Provider>
+    </BrowserRouter>
   );
 }
 
