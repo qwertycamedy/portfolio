@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../../Context";
 import MyPage from "../../components/page/MyPage";
 import cl from "./Project.module.scss";
 import MySection from "../../components/section/MySection";
 import lImg from "../../assets/img/arrow-left.svg";
 import rImg from "../../assets/img/arrow-right.svg";
+import githubImg from "../../assets/img/github.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import SwiperCore, { Mousewheel } from "swiper/core";
@@ -25,14 +26,19 @@ const Project = () => {
   const navPrev = React.useRef(null);
   const navNext = React.useRef(null);
 
-
   const navigate = useNavigate();
 
   return (
     <MyPage classNames={"page"}>
       <div className={cl.flex + " flex gap-6 items-center"}>
-        <MyBtnC onClick={() => navigate(-1)} img={lImg} w='24' h='24' classNames={cl.back + ' p-4'} />
-      <h1 className={`${cl.title} title-main`}>{t(project.title)}</h1>
+        <MyBtnC
+          onClick={() => navigate(-1)}
+          img={lImg}
+          w="24"
+          h="24"
+          classNames={cl.back + " p-4"}
+        />
+        <h1 className={`${cl.title} title-main`}>{t(project.title)}</h1>
       </div>
       <MySection>
         <div className={"relative"}>
@@ -47,7 +53,7 @@ const Project = () => {
               forceToAxis: true,
             }}
             pagination={{
-              clickable: true
+              clickable: true,
             }}
             navigation={{
               prevEl: navPrev.current,
@@ -96,25 +102,35 @@ const Project = () => {
           </div>
         </div>
         <div className="flex items-center justify-between">
-        <div className={cl.projectInfo}>
-          <div className="flex gap-2">
-            <p className={cl.projectTypeTitle}>{t("Type")}:</p>
-            <p className={cl.projectType}>
-              {project.type.map(type => (
-                <span key={type}>{t(type)}</span>
-              ))}
-            </p>
+          <div className={cl.projectInfo}>
+            <div className="flex gap-2">
+              <p className={cl.projectTypeTitle}>{t("Type")}:</p>
+              <p className={cl.projectType}>
+                {project.type.map(type => (
+                  <span key={type}>{t(type)}</span>
+                ))}
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <p className={cl.projectSkillsTitle}>{t("Skills")}:</p>
+              <p className={cl.projectSkills}>
+                {project.skills.map(skill => (
+                  <span key={skill}>{t(skill)}</span>
+                ))}
+              </p>
+            </div>
           </div>
-          <div className="flex gap-2">
-            <p className={cl.projectSkillsTitle}>{t("Skills")}:</p>
-            <p className={cl.projectSkills}>
-              {project.skills.map(skill => (
-                <span key={skill}>{t(skill)}</span>
-              ))}
-            </p>
+          <div className="flex items-center gap-6">
+            <Link to={project.github} target="_blank">
+              <MyBtnC img={githubImg} h="25" w="25" />
+            </Link>
+            <MyLink
+              classNames={cl.projectBtn}
+              text="To site"
+              to={project.to}
+              target="_blank"
+            />
           </div>
-        </div>
-        <MyLink classNames={cl.projectBtn} text='To site' to={project.to} target='_blank' />
         </div>
       </MySection>
     </MyPage>

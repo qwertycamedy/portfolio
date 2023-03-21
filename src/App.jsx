@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {  Route, Routes, useLocation } from "react-router-dom";
 import { AppContext } from "./Context";
 import i18n from "./i18n";
 import { useTranslation } from "react-i18next";
@@ -66,6 +66,7 @@ function App() {
     {
       id: 1,
       to: "https://qwertycamedy.ru/sites/TooDoo/",
+      github: 'https://github.com/qwertycamedy/toodoo',
       title: "TooDoo",
       type: ["Todo app", "SPA"],
       skills: ["React"],
@@ -75,6 +76,7 @@ function App() {
     {
       id: 2,
       to: "https://qwertycamedy.ru/sites/tank/",
+      github: 'https://github.com/qwertycamedy/tank',
       title: "WOT Accs",
       type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
@@ -84,6 +86,7 @@ function App() {
     {
       id: 3,
       to: "https://qwertycamedy.ru/sites/trify/",
+      github: 'https://github.com/qwertycamedy/trify',
       title: "Trify",
       type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
@@ -93,6 +96,7 @@ function App() {
     {
       id: 4,
       to: "https://qwertycamedy.ru/sites/scan-tg/",
+      github: 'https://github.com/qwertycamedy/scan-tg',
       title: "Scan TG",
       type: ["Landing-Page", "animations"],
       skills: ["HTML", "CSS", "JS"],
@@ -102,6 +106,7 @@ function App() {
     {
       id: 5,
       to: "https://sneakers-square.qwertycamedy.ru/",
+      github: 'https://github.com/qwertycamedy/sneakersSquare',
       title: "Sneakers Square",
       type: ["E-Commerce", "SPA"],
       skills: ["React"],
@@ -278,7 +283,6 @@ function App() {
   };
 
   return (
-  <BrowserRouter>
     <AppContext.Provider
       value={{
         t,
@@ -306,7 +310,6 @@ function App() {
         </Routes>
       </div>
     </AppContext.Provider>
-    </BrowserRouter>
   );
 }
 
