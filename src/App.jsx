@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import {  Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { AppContext } from "./Context";
 import i18n from "./i18n";
 import { useTranslation } from "react-i18next";
@@ -39,6 +39,12 @@ import sn4 from "./assets/img/sn4.png";
 import sn1 from "./assets/img/sn1.png";
 import sn2 from "./assets/img/sn2.png";
 import sn3 from "./assets/img/sn3.png";
+import dashka1 from "./assets/img/dashka1.png";
+import dashka2 from "./assets/img/dashka2.png";
+import dashka3 from "./assets/img/dashka3.png";
+import dashka4 from "./assets/img/dashka4.png";
+import dashka5 from "./assets/img/dashka5.png";
+
 import {
   DiHtml5,
   DiCss3,
@@ -66,7 +72,7 @@ function App() {
     {
       id: 1,
       to: "https://qwertycamedy.ru/sites/TooDoo/",
-      github: 'https://github.com/qwertycamedy/toodoo',
+      github: "https://github.com/qwertycamedy/toodoo",
       title: "TooDoo",
       type: ["Todo app", "SPA"],
       skills: ["React"],
@@ -76,7 +82,7 @@ function App() {
     {
       id: 2,
       to: "https://qwertycamedy.ru/sites/tank/",
-      github: 'https://github.com/qwertycamedy/tank',
+      github: "https://github.com/qwertycamedy/tank",
       title: "WOT Accs",
       type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
@@ -86,17 +92,26 @@ function App() {
     {
       id: 3,
       to: "https://qwertycamedy.ru/sites/trify/",
-      github: 'https://github.com/qwertycamedy/trify',
+      github: "https://github.com/qwertycamedy/trify",
       title: "Trify",
       type: ["E-Commerce", "Multipage"],
       skills: ["HTML", "CSS", "JS"],
       cover: trifyCover,
-      imgs: [trifyCover, trify9, trify1, trify4, trify5, trify6, trify7, trify8],
+      imgs: [
+        trifyCover,
+        trify9,
+        trify1,
+        trify4,
+        trify5,
+        trify6,
+        trify7,
+        trify8,
+      ],
     },
     {
       id: 4,
       to: "https://qwertycamedy.ru/sites/scan-tg/",
-      github: 'https://github.com/qwertycamedy/scan-tg',
+      github: "https://github.com/qwertycamedy/scan-tg",
       title: "Scan TG",
       type: ["Landing-Page", "animations"],
       skills: ["HTML", "CSS", "JS"],
@@ -106,12 +121,22 @@ function App() {
     {
       id: 5,
       to: "https://sneakers-square.qwertycamedy.ru/",
-      github: 'https://github.com/qwertycamedy/sneakersSquare',
+      github: "https://github.com/qwertycamedy/sneakersSquare",
       title: "Sneakers Square",
       type: ["E-Commerce", "SPA"],
       skills: ["React"],
       cover: snsqCover,
       imgs: [snsqCover, sn4, sn1, sn2, sn3],
+    },
+    {
+      id: 6,
+      to: "https://dashka.vercel.app/",
+      github: "https://github.com/qwertycamedy/dashka",
+      title: "Dashka (Dashboard)",
+      type: ["Dashboard", "SPA"],
+      skills: ["React", "Next.js", 'Typescript', "Chart.js", 'TailwindCSS'],
+      cover: dashka1,
+      imgs: [dashka1, dashka2, dashka3, dashka4, dashka5],
     },
   ]);
   const [reviews] = useState([
