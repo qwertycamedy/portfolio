@@ -122,7 +122,7 @@ const Project = () => {
           </div>
           <div className="flex items-center gap-6">
             <Link to={project.github} target="_blank">
-              <MyBtnC img={githubImg} h="25" w="25" />
+              <MyBtnC classNames='min25' img={githubImg} h="25" w="25" />
             </Link>
             <MyLink
               classNames={cl.projectBtn}

@@ -64,6 +64,8 @@
   &Type,
   &Skills {
     opacity: 0.4;
+    display: inline-flex;
+    flex-wrap: wrap;
 
     & > span:not(:last-child) {
       margin-right: 0.6rem;

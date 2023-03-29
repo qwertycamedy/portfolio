@@ -226,5 +226,11 @@ body {
   padding: 25px;
 }
 
+.min25 {
+  & img {
+    min-width: 25px;
+  }
+}
+
 
 @import url("./navbar.scss");

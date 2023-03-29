@@ -134,7 +134,7 @@ function App() {
       github: "https://github.com/qwertycamedy/dashka",
       title: "Dashka (Dashboard)",
       type: ["Dashboard", "SPA"],
-      skills: ["React", "Next.js", 'Typescript', "Chart.js", 'TailwindCSS'],
+      skills: ["React", "Next.js", "Typescript", "Chart.js", "TailwindCSS"],
       cover: dashka1,
       imgs: [dashka1, dashka2, dashka3, dashka4, dashka5],
     },
