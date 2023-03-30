@@ -87,7 +87,7 @@ const Projects = ({ t }) => {
       >
         {projects.map(
           project =>
-            project.id <= 5 && (
+            project.id >= 3 && (
               <SwiperSlide className={cl.slide} key={project.id}>
                 {
                   <Link to={`/project/${project.id - 1}`} className={cl.slideContent}>

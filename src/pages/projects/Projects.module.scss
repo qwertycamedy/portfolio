@@ -64,9 +64,13 @@
   &Type,
   &Skills {
     opacity: 0.4;
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 5px;
+    box-sizing: border-box;
+    padding: 0 15px;
 
     & > span:not(:last-child) {
       &:after {
