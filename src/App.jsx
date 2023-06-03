@@ -44,7 +44,14 @@ import dashka2 from "./assets/img/dashka2.png";
 import dashka3 from "./assets/img/dashka3.png";
 import dashka4 from "./assets/img/dashka4.png";
 import dashka5 from "./assets/img/dashka5.png";
-
+import alphaBeat1 from "./assets/img/alphaBeat1.png";
+import alphaBeat2 from "./assets/img/alphaBeat2.png";
+import alphaBeat3 from "./assets/img/alphaBeat3.png";
+import alphaBeat4 from "./assets/img/alphaBeat4.png";
+import alphaBeat5 from "./assets/img/alphaBeat5.png";
+import pizza1 from './assets/img/pizza1.png';
+import pizza2 from './assets/img/pizza2.png';
+import pizza3 from './assets/img/pizza3.png';
 import {
   DiHtml5,
   DiCss3,
@@ -137,6 +144,26 @@ function App() {
       skills: ["React", "Next.js", "Typescript", "Chart.js", "TailwindCSS"],
       cover: dashka1,
       imgs: [dashka1, dashka2, dashka3, dashka4, dashka5],
+    },
+    {
+      id: 7,
+      to: "https://alpha-beat.vercel.app/",
+      github: "https://github.com/qwertycamedy/alphaBeat",
+      title: "Alpha-Beat (Game)",
+      type: ["Game", "SPA"],
+      skills: ["React", "TailwindCSS", 'Axios', 'MockAPI'],
+      cover: alphaBeat1,
+      imgs: [alphaBeat1, alphaBeat2, alphaBeat3, alphaBeat4, alphaBeat5],
+    },
+    {
+      id: 8,
+      to: "https://pizza.qwertycamedy.ru/",
+      github: "https://github.com/qwertycamedy/pizza",
+      title: "Pizza",
+      type: ["E-commerce", "SPA"],
+      skills: ["React", "Redux", "TypeScript", "TailwindCSS", 'Axios', 'MockAPI'],
+      cover: pizza1,
+      imgs: [pizza1, pizza2, pizza3],
     },
   ]);
   const [reviews] = useState([
