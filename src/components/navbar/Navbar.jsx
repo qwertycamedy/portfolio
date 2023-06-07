@@ -13,10 +13,11 @@ import nav4 from "../../assets/img/nav4.svg";
 import nav5 from "../../assets/img/nav5.svg";
 import nav6 from "../../assets/img/nav6.svg";
 
-import logoImg from '../../assets/img/logo.svg'
-import meImg from '../../assets/img/me.jpg'
+import logoImg from "../../assets/img/logo.svg";
+import meImg from "../../assets/img/me.jpg";
 
 import MyBtnC from "../../UI/btn-c/MyBtnC";
+import { FaFilePdf } from "react-icons/fa";
 
 const Navbar = () => {
   const { t, langMode, onLangChange, contacts, onToggleContacts } =
@@ -77,14 +78,20 @@ const Navbar = () => {
 
   const onBurger = () => {
     setBurger(!burger);
-    document.body.classList.toggle('overflow-h')
+    document.body.classList.toggle("overflow-h");
   };
 
   return (
     <aside className="navbar">
       <MyLogo classnames="navbar__logo" img={logoImg} />
-      <div className={burger ? "navbar__inner active" : "navbar__inner"} onClick={onBurger}>
-        <MyLogo classnames="navbar__img" img={window.innerWidth < 550 ? meImg : logoImg} />
+      <div
+        className={burger ? "navbar__inner active" : "navbar__inner"}
+        onClick={onBurger}
+      >
+        <MyLogo
+          classnames="navbar__img"
+          img={window.innerWidth < 550 ? meImg : logoImg}
+        />
 
         <h3 className="navbar__title sb">{t("Adil Kairbekov")}</h3>
 
@@ -112,6 +119,18 @@ const Navbar = () => {
               </li>
             )
           )}
+          <li className="navbar__social-item social-item">
+            <Link
+              to={
+                "https://qwertycamedy.ru/Adil_Kairbekov_Frontend-Developer.pdf"
+              }
+              target="_blank"
+            >
+              <button className="navbar__social-resume">
+                <FaFilePdf size={17} />
+              </button>
+            </Link>
+          </li>
         </ul>
 
         <ul className="navbar__menu">

@@ -5,6 +5,7 @@ import MyBtnC from "../../UI/btn-c/MyBtnC";
 import cl from "./Contacts.module.scss";
 import { CgClose } from "react-icons/cg";
 import MyModal from "../../components/modal/MyModal";
+import { FaFilePdf } from "react-icons/fa";
 
 const Contacts = () => {
   const { t, contacts, toggleContacts, onToggleContacts } =
@@ -47,6 +48,18 @@ const Contacts = () => {
             </li>
           )
         )}
+        <li>
+          <Link
+            className={cl.link + " flex gap-4 items-center"}
+            to={"https://qwertycamedy.ru/Adil_Kairbekov_Frontend-Developer.pdf"}
+            target="_blank"
+          >
+            <button className="navbar__social-resume">
+              <FaFilePdf size={17} />
+            </button>
+            <span>{t("Resume")}</span>
+          </Link>
+        </li>
       </ul>
     </MyModal>
   );
