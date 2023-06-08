@@ -52,6 +52,9 @@ import alphaBeat5 from "./assets/img/alphaBeat5.png";
 import pizza1 from './assets/img/pizza1.png';
 import pizza2 from './assets/img/pizza2.png';
 import pizza3 from './assets/img/pizza3.png';
+import usersTest1 from './assets/img/usersTest1.png';
+import usersTest2 from './assets/img/usersTest2.png';
+import usersTest3 from './assets/img/usersTest3.png';
 import {
   DiHtml5,
   DiCss3,
@@ -164,6 +167,16 @@ function App() {
       skills: ["React", "Redux", "TypeScript", "TailwindCSS", 'Axios', 'MockAPI'],
       cover: pizza1,
       imgs: [pizza1, pizza2, pizza3],
+    },
+    {
+      id: 9,
+      to: "https://test-marketplace-qwertycamedy.vercel.app/",
+      github: "https://github.com/qwertycamedy/test-marketplace",
+      title: "Users (Test Task)",
+      type: ["SPA"],
+      skills: ["React", "TailwindCSS", 'Axios', 'Randomuser'],
+      cover: usersTest2,
+      imgs: [usersTest1, usersTest2, usersTest3],
     },
   ]);
   const [reviews] = useState([
