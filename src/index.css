@@ -1,9 +1,35 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/fonts/Inter-Regular.woff2");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/fonts/Inter-Medium.woff2");
+  font-display: swap;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/fonts/Inter-SemiBold.woff2");
+  font-display: swap;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/fonts/Inter-Bold.woff2");
+  font-display: swap;
+  font-weight: 700;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-inter: var(--font-inter);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -45,6 +71,7 @@
 }
 
 :root {
+  --font-inter: "Inter", "sans-serif";
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -80,6 +107,7 @@
 }
 
 .dark {
+  --font-inter: "Inter", "sans-serif";
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -111,6 +139,23 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+html,
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1 0 auto;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+}
+
+button,
+a {
+  cursor: pointer;
 }
 
 @layer base {
