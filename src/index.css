@@ -161,6 +161,10 @@
   --burger-foreground: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {

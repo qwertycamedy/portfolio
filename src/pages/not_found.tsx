@@ -1,10 +1,14 @@
 import { Button, Title, TitleSizes } from '@/components/ui';
+import { Page } from '@/components/ui/page';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const NotFound = () => {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-2 pb-50 text-center">
+    <Page
+      className="items-center justify-center gap-2 pb-50 text-center"
+      sidebar={false}
+    >
       <Title text="404" size={TitleSizes.h1} className="text-7xl!" />
       <p className="text-md mb-8">
         Page is not found! :( <br /> Back to the main page, please...
@@ -14,6 +18,6 @@ export const NotFound = () => {
           <ArrowLeft /> Back
         </Button>
       </Link>
-    </div>
+    </Page>
   );
 };
