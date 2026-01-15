@@ -1,10 +1,11 @@
 import { navLinks } from '@/utils';
-import { Card, Section } from '../ui';
+import { Card } from '../ui';
+import { Element } from 'react-scroll';
 
 export const Reviews = () => {
   return (
-    <Section id={navLinks[4].path}>
-      <Card className={'h-100'}>Reviews</Card>
-    </Section>
+    <Element name={navLinks[4].path} id={navLinks[4].path}>
+      <Card className={'h-150'}>Reviews</Card>
+    </Element>
   );
 };

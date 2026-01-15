@@ -1,37 +1,21 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import { Card, Title, TitleSizes } from '@/components/ui';
 import meImg from '@/assets/img/me.jpg';
-import { useEffect, useState } from 'react';
 import { cn, navLinks, networkLinks } from '@/utils';
+import { useScrollBottomMonitor } from '@/hooks';
 
 export const Sidebar = () => {
+  const isBottom = useScrollBottomMonitor(navLinks[4].path);
   const [activeNavLink, setActiveNavLink] = useState<string>(navLinks[0].path);
 
-  useEffect(() => {
-    const observers = navLinks.map(({ path }) => {
-      const element = document.getElementById(path);
-      if (!element) return null;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveNavLink(path);
-          }
-        },
-        { threshold: 0.5 },
-      );
-
-      observer.observe(element);
-      return observer;
-    });
-
-    return () => {
-      observers.forEach((obs) => obs?.disconnect());
-    };
-  }, []);
+  const onSetActive = (curLink: string) => {
+    setActiveNavLink(curLink);
+  };
 
   return (
-    <aside className="flex h-max w-full max-w-60 flex-col sticky top-5">
+    <aside className="sticky top-5 flex h-max w-full max-w-60 flex-col">
       <Card className={'flex-col gap-5 px-5.5 pt-5.5 pb-12'}>
         <img
           className="h-19 w-19 rounded-full"
@@ -60,17 +44,30 @@ export const Sidebar = () => {
         <ul className="flex flex-col gap-3 pl-3.5">
           {navLinks.map((navLink) => (
             <li key={navLink.path}>
-              <Link
+              <ScrollLink
                 className={cn(
-                  'text-secondary-foreground relative flex items-center gap-3 text-sm hover:opacity-70 transition-opacity',
-                  { 'text-foreground': activeNavLink === navLink.path },
+                  'text-secondary-foreground relative flex items-center gap-3 text-sm transition-opacity hover:opacity-70',
+                  {
+                    'text-foreground':
+                      (!isBottom && activeNavLink === navLink.path) ||
+                      (isBottom && navLink.path === navLinks[4].path),
+                  },
                 )}
-                to={`/#${navLink.path}`}
+                to={`${navLink.path}`}
+                spy={true}
+                hashSpy={true}
+                duration={500}
+                offset={-150}
+                onSetActive={onSetActive}
               >
                 <span
                   className={cn(
                     'bg-primary pointer-events-none absolute right-[calc(100%+8px)] flex h-1.5 w-1.5 rounded-full opacity-0 transition-opacity',
-                    { 'opacity-100': activeNavLink === navLink.path },
+                    {
+                      'opacity-100':
+                        (!isBottom && activeNavLink === navLink.path) ||
+                        (isBottom && navLink.path === navLinks[4].path),
+                    },
                   )}
                 />
                 <span
@@ -82,7 +79,7 @@ export const Sidebar = () => {
                   <navLink.icon size={14} />
                 </span>
                 <span>{navLink.text}</span>
-              </Link>
+              </ScrollLink>
             </li>
           ))}
         </ul>

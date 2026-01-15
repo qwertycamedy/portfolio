@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Button, Card, Section, Title, TitleSizes } from '../ui';
+import { Element } from 'react-scroll';
+import { Button, Card, Title, TitleSizes } from '../ui';
 import { navLinks, networkLinks } from '@/utils';
 
 export const Hero = () => {
   return (
-    <Section id={navLinks[0].path}>
+    <Element name={navLinks[0].path} id={navLinks[0].path}>
       <Card className="h-max flex-col">
         <p className="mb-2">Qwerty Camedy</p>
         <Title
@@ -16,6 +17,6 @@ export const Hero = () => {
           <Button className="w-max px-5 py-3">Нанять меня</Button>
         </Link>
       </Card>
-    </Section>
+    </Element>
   );
 };
