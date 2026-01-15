@@ -31,7 +31,7 @@ export const Sidebar = () => {
   }, []);
 
   return (
-    <aside className="flex h-max w-full max-w-60 flex-col">
+    <aside className="flex h-max w-full max-w-60 flex-col sticky top-5">
       <Card className={'flex-col gap-5 px-5.5 pt-5.5 pb-12'}>
         <img
           className="h-19 w-19 rounded-full"

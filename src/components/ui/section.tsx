@@ -2,20 +2,18 @@ import { cn } from '@/utils';
 import { ReactNode } from 'react';
 import { ClassNameValue } from 'tailwind-merge';
 
-export const Card = ({
+export const Section = ({
   className,
+  id,
   children,
-  ...props
 }: {
   className?: ClassNameValue;
+  id?: string;
   children: ReactNode;
 }) => {
   return (
-    <div
-      className={cn('bg-card-opacity flex w-full rounded-2xl px-14 py-10', className)}
-      {...props}
-    >
+    <section className={cn('flex w-full', className)} id={id}>
       {children}
-    </div>
+    </section>
   );
 };

@@ -1,5 +1,4 @@
-import { Button, Title, TitleSizes } from '@/components/ui';
-import { Page } from '@/components/ui/page';
+import { Button, Title, TitleSizes, Page } from '@/components/ui';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
