@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-inter: "Inter", sans-serif;
+  --font-inter: var(--ff-inter);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -66,7 +66,7 @@
 }
 
 :root {
-  --font-inter: "Inter", sans-serif;
+  --ff-inter: 'Inter', sans-serif;
 
   --radius: 0.625rem;
 
@@ -78,13 +78,13 @@
   --background: #020013;
   --foreground: #fff;
 
-  --card: #100F1E;
+  --card: #100f1e;
   --card-foreground: #fff;
 
-  --card-opacity: #100F1E95;
+  --card-opacity: #100f1e95;
   --card-opacity-foreground: #fff;
 
-  --popover: #100F1E;
+  --popover: #100f1e;
   --popover-foreground: #ffffff80;
 
   --badge: #283249;
@@ -93,24 +93,24 @@
   --deep: #0e1016;
   --deep-foreground: #d8dadc;
 
-  --primary: #6368E2;
+  --primary: #6368e2;
   --primary-foreground: #fff;
 
-  --secondary: #100F1E;
+  --secondary: #100f1e;
   --secondary-foreground: #a2a4ac;
   --secondary-card-background: #283249;
 
-  --muted: #100F1E;
+  --muted: #100f1e;
   --muted-foreground: #a2a4ac;
 
-  --accent: #100F1E;
+  --accent: #100f1e;
   --accent-foreground: #a2a4ac;
 
   --border: #ffffff10;
   --input: #ffffff10;
   --ring: #a1a1a1;
 
-  --sidebar: #100F1E;
+  --sidebar: #100f1e;
   --sidebar-foreground: #ffffff70;
   --sidebar-primary: #ffffff80;
   --sidebar-primary-foreground: #ffffff;
@@ -124,7 +124,7 @@
 }
 
 .dark {
-  --font-inter: "Inter", sans-serif;
+  --ff-inter: 'Inter', sans-serif;
 
   --success: #3b8a43;
   --success-foreground: #53f39d;
@@ -134,13 +134,13 @@
   --background: #020013;
   --foreground: #fff;
 
-  --card: #100F1E;
+  --card: #100f1e;
   --card-foreground: #fff;
 
-  --card-opacity: #100F1E95;
+  --card-opacity: #100f1e95;
   --card-opacity-foreground: #fff;
 
-  --popover: #100F1E;
+  --popover: #100f1e;
   --popover-foreground: #ffffff80;
 
   --badge: #283249;
@@ -149,24 +149,24 @@
   --deep: #0e1016;
   --deep-foreground: #d8dadc;
 
-  --primary: #6368E2;
+  --primary: #6368e2;
   --primary-foreground: #fff;
 
-  --secondary: #100F1E;
+  --secondary: #100f1e;
   --secondary-foreground: #a2a4ac;
   --secondary-card-background: #283249;
 
-  --muted: #100F1E;
+  --muted: #100f1e;
   --muted-foreground: #a2a4ac;
 
-  --accent: #100F1E;
+  --accent: #100f1e;
   --accent-foreground: #a2a4ac;
 
   --border: #ffffff10;
   --input: #ffffff10;
   --ring: #a1a1a1;
 
-  --sidebar: #100F1E;
+  --sidebar: #100f1e;
   --sidebar-foreground: #a2a4ac;
   --sidebar-primary: #ffffff80;
   --sidebar-primary-foreground: #ffffff;
@@ -181,6 +181,9 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--ff-inter);
+  background: var(--background);
+  color: var(--foreground);
 }
 
 html,
@@ -190,9 +193,6 @@ body,
   flex-direction: column;
   min-height: 100%;
   flex: 1 0 auto;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter) !important;
 }
 
 button,

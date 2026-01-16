@@ -12,7 +12,7 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={cn('bg-card-opacity flex w-full rounded-2xl px-14 py-10', className)}
+      className={cn('bg-card-opacity flex w-full rounded-3xl px-14 py-10', className)}
       {...props}
     >
       {children}

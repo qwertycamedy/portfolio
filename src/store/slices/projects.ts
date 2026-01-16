@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "@/store/store";
-import { TProject } from "@/types";
+import { createSlice } from '@reduxjs/toolkit';
+import type { RootState } from '@/store/store';
+import { EProjectCategories, TProject } from '@/types';
 
 type TProjectsState = {
   projects: TProject[];
@@ -8,12 +8,19 @@ type TProjectsState = {
 };
 
 const initialState: TProjectsState = {
-  projects: [],
+  projects: [
+    {
+      imageUrls: [''],
+      name: '',
+      description: '',
+      categories: [EProjectCategories.react],
+    },
+  ],
   project: null,
 };
 
 export const projectsSlice = createSlice({
-  name: "projects",
+  name: 'projects',
   initialState,
   reducers: {
     setProjects: (state, { payload }: { payload: TProject[] }) => {
