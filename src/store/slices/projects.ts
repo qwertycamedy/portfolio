@@ -2,6 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { RootState } from '@/store/store';
 import { EProjectCategories, TProject } from '@/types';
 
+import project_1_img_0 from '@/assets/img/project_1_0.webp';
+import project_1_img_1 from '@/assets/img/project_1_1.webp';
+import project_1_img_2 from '@/assets/img/project_1_2.webp';
+
 type TProjectsState = {
   projects: TProject[];
   project: TProject | null | undefined;
@@ -10,10 +14,34 @@ type TProjectsState = {
 const initialState: TProjectsState = {
   projects: [
     {
-      imageUrls: [''],
-      name: '',
+      imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+      name: 'AURA TMA',
       description: '',
-      categories: [EProjectCategories.react],
+      categories: [EProjectCategories.react, EProjectCategories.tma],
+    },
+    {
+      imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+      name: 'AURA TMA',
+      description: '',
+      categories: [EProjectCategories.react, EProjectCategories.tma],
+    },
+    {
+      imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+      name: 'AURA TMA',
+      description: '',
+      categories: [EProjectCategories.react, EProjectCategories.tma],
+    },
+    {
+      imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+      name: 'AURA TMA',
+      description: '',
+      categories: [EProjectCategories.react, EProjectCategories.tma],
+    },
+    {
+      imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+      name: 'AURA TMA',
+      description: '',
+      categories: [EProjectCategories.react, EProjectCategories.tma],
     },
   ],
   project: null,

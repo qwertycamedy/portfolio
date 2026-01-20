@@ -7,7 +7,7 @@ import { cn, navLinks, networkLinks } from '@/utils';
 import { useScrollBottomMonitor } from '@/hooks';
 
 export const Sidebar = () => {
-  const isBottom = useScrollBottomMonitor(navLinks[4].path);
+  const isBottom = useScrollBottomMonitor(navLinks[3].path);
   const [activeNavLink, setActiveNavLink] = useState<string>(navLinks[0].path);
 
   const onSetActive = (curLink: string) => {
@@ -15,7 +15,7 @@ export const Sidebar = () => {
   };
 
   return (
-    <aside className="sticky top-5 flex h-max w-full max-w-60 flex-col">
+    <aside className="sticky top-5 flex h-max w-60 min-w-60 flex-col">
       <Card className={'flex-col gap-5 px-5.5 pt-5.5 pb-12'}>
         <img
           className="h-19 w-19 rounded-full"
@@ -50,7 +50,7 @@ export const Sidebar = () => {
                   {
                     'text-foreground':
                       (!isBottom && activeNavLink === navLink.path) ||
-                      (isBottom && navLink.path === navLinks[4].path),
+                      (isBottom && navLink.path === navLinks[3].path),
                   },
                 )}
                 to={`${navLink.path}`}
@@ -66,7 +66,7 @@ export const Sidebar = () => {
                     {
                       'opacity-100':
                         (!isBottom && activeNavLink === navLink.path) ||
-                        (isBottom && navLink.path === navLinks[4].path),
+                        (isBottom && navLink.path === navLinks[3].path),
                     },
                   )}
                 />

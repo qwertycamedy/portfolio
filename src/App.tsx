@@ -3,7 +3,7 @@ import { Home, NotFound } from '@/pages';
 
 function App() {
   return (
-    <main className="flex min-h-full w-full max-w-full flex-1 flex-col">
+    <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />

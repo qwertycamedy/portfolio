@@ -1,5 +1,5 @@
 import { navLink, networkLink } from '@/types';
-import { CircleGauge, Grid2X2, RotateCcw, Smile, Star } from 'lucide-react';
+import { CircleGauge, Grid2X2, RotateCcw, Smile } from 'lucide-react';
 
 export const networkLinks: networkLink[] = [
   {
@@ -36,10 +36,5 @@ export const navLinks: navLink[] = [
     path: 'skills',
     text: 'Скиллы',
     icon: CircleGauge,
-  },
-  {
-    path: 'reviews',
-    text: 'Отзывы',
-    icon: Star,
   },
 ];

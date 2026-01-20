@@ -3,6 +3,7 @@ export enum EProjectCategories {
   layout = 'Верстка',
   cms = 'CMS',
   react = 'React.js',
+  tma = 'TMA',
 }
 
 export type TProject = {

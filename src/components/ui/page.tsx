@@ -15,7 +15,7 @@ export const Page = ({
   return (
     <div
       className={cn(
-        'page mx-auto flex w-full max-w-7xl flex-1 flex-col p-5 pb-10 gap-5',
+        'mx-auto flex max-w-7xl flex-1 flex-col p-5 pb-10 gap-5',
         className,
       )}
     >
