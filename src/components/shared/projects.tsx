@@ -28,7 +28,7 @@ export const Projects = () => {
 
         <Swiper
           ref={swiperRef}
-          className="mySwiper max-w-full min-w-0"
+          className="mySwiper max-w-full min-w-0 cursor-grab active:cursor-grabbing"
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -44,7 +44,7 @@ export const Projects = () => {
         >
           {projects.map((project, i) => (
             <SwiperSlide
-              className="bg-primary max-w-ful group p-1 relative overflow-hidden rounded-3xl"
+              className="bg-primary max-w-ful group relative overflow-hidden rounded-3xl p-1"
               key={project.name + i}
             >
               <Link
