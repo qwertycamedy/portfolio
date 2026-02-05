@@ -6,11 +6,14 @@ import {
   Skeleton,
   Title,
   TitleSizes,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from '@/components/ui';
 import { useAppSelector } from '@/hooks';
 import { projectsSel } from '@/store';
 import { TProject } from '@/types';
-import { ChevronLeft } from 'lucide-react';
+import { AppWindowMac, ChevronLeft, Github } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
@@ -55,9 +58,9 @@ export const Project = () => {
           />
         )}
       </Card>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-8 gap-5">
         {project ? (
-          <Card className="flex-col items-center justify-center gap-2 min-h-0 min-w-0 p-4">
+          <Card className="col-start-1 col-end-6 min-h-0 min-w-0 flex-col items-center justify-center gap-2 p-4">
             <Swiper
               ref={swiperRef}
               className="mySwiper w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
@@ -86,10 +89,10 @@ export const Project = () => {
             )}
           </Card>
         ) : (
-          <Skeleton className="h-100" />
+          <Skeleton className="col-start-1 col-end-6 h-140" />
         )}
         {project ? (
-          <Card className={'flex-col gap-6 px-4 py-6'}>
+          <Card className={'col-start-6 col-end-9 flex-col gap-6 px-4 py-6'}>
             <div className="flex flex-col gap-2">
               <Title text="Стэк примененных технологий:" size={TitleSizes.h5} />
               <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm">
@@ -103,13 +106,43 @@ export const Project = () => {
 
             <div className="flex flex-col gap-2">
               <Title text="Описание:" size={TitleSizes.h5} />
-              <span className="text-secondary-foreground text-sm">
+              <span className="text-secondary-foreground text-justify text-sm">
                 {project.description}
               </span>
             </div>
+
+            <div className="flex items-center gap-4">
+              <Title text="Ссылки:" size={TitleSizes.h5} />
+              <div className="flex gap-2">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link to={project.githubUrl} target="_blank">
+                      <Button size={'icon'}>
+                        <Github />
+                      </Button>
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Github</p>
+                  </TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link to={project.siteUrl} target="_blank">
+                      <Button size={'icon'}>
+                        <AppWindowMac />
+                      </Button>
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Ссылка на проект</p>
+                  </TooltipContent>
+                </Tooltip>
+              </div>
+            </div>
           </Card>
         ) : (
-          <Skeleton className="h-100" />
+          <Skeleton className="col-start-6 col-end-9 h-140" />
         )}
       </div>
       <QcIcoOutline />

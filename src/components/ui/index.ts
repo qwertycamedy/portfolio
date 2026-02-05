@@ -3,4 +3,5 @@ export { Title, sizes as TitleSizes } from './title';
 export { Page } from './page';
 export { Section } from './section';
 export { Card } from './card';
-export {Skeleton} from './skeleton'
+export * from './tooltip'
+export {Skeleton} from './skeleton';

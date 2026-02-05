@@ -9,13 +9,16 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from '@/store';
 
-import App from '@/App.tsx';
+import App from '@/App';
+import { TooltipProvider } from '@/components/ui';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <TooltipProvider>
+          <App />
+        </TooltipProvider>
       </BrowserRouter>
     </Provider>
   </StrictMode>,

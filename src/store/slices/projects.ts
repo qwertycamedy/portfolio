@@ -16,32 +16,47 @@ const initialState: TProjectsState = {
     {
       imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
       name: 'AURA TMA',
-      description: 'To integrate with TON, the standard wallet connection protocol is used — TON Connect. It is similar to WalletConnect on Ethereum, but made specifically for TON and covers basic integration aspects. For deeper integrations, it’s common to utilize various supplementary SDKs and APIs. To integrate with TON, the standard wallet connection protocol is used — TON Connect. It is similar to WalletConnect on Ethereum, but made specifically for TON and covers basic integration aspects. For deeper integrations, it’s common to utilize various supplementary SDKs and APIs.',
+      description: `To integrate with TON, the standard wallet connection protocol is used — TON Connect.
+         It is similar to WalletConnect on Ethereum, but made specifically for TON and covers basic integration aspects. 
+         For deeper integrations, it’s common to utilize various supplementary SDKs and APIs. 
+         To integrate with TON, the standard wallet connection protocol is used — TON Connect. 
+         It is similar to WalletConnect on Ethereum, but made specifically for TON and covers basic integration aspects. 
+         For deeper integrations, it’s common to utilize various supplementary SDKs and APIs.`,
       categories: [EProjectCategories.react, EProjectCategories.tma],
+      githubUrl: '',
+      siteUrl: '',
     },
     {
       imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
       name: 'AURA TMA',
       description: '',
       categories: [EProjectCategories.react, EProjectCategories.tma],
+      githubUrl: '',
+      siteUrl: '',
     },
     {
       imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
       name: 'AURA TMA',
       description: '',
       categories: [EProjectCategories.react, EProjectCategories.tma],
+      githubUrl: '',
+      siteUrl: '',
     },
     {
       imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
       name: 'AURA TMA',
       description: '',
       categories: [EProjectCategories.react, EProjectCategories.tma],
+      githubUrl: '',
+      siteUrl: '',
     },
     {
       imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
       name: 'AURA TMA',
       description: '',
       categories: [EProjectCategories.react, EProjectCategories.tma],
+      githubUrl: '',
+      siteUrl: '',
     },
   ],
   project: null,

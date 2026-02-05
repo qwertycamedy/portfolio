@@ -11,4 +11,6 @@ export type TProject = {
   name: string;
   description: string;
   categories: EProjectCategories[];
+  githubUrl: string;
+  siteUrl: string;
 };
