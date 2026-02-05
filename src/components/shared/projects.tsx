@@ -17,7 +17,7 @@ export const Projects = () => {
 
   return (
     <Element name={navLinks[2].path} id={navLinks[2].path}>
-      <Card className="min-h-0 min-w-0 flex-col gap-8">
+      <Card className="min-h-0 min-w-0 flex-col gap-10">
         <div className="flex items-center justify-between gap-10">
           <SectionTitle text="Портфолио" />
           <SliderNavigation

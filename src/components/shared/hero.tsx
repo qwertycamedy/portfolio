@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <Element name={navLinks[0].path} id={navLinks[0].path}>
       <Card className="h-max flex-col">
-        <p className="mb-2">Qwerty Camedy</p>
+        <p className="mb-2 text-secondary-foreground">Qwerty Camedy</p>
         <Title
           className={'mb-5'}
           text="Frontend Developer"
