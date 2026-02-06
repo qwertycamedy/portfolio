@@ -52,7 +52,6 @@ export const Project = () => {
       className={'relative z-1'}
       contentCl={'flex-col'}
       sidebar={false}
-      burger={false}
     >
       <Card className="relative items-center justify-between gap-8 py-4 pr-8 pl-4 md:p-4">
         <Link to={'/'}>

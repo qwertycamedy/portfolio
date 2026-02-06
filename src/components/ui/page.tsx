@@ -26,8 +26,10 @@ export const Page = ({
   return (
     <div
       className={cn(
-        'flex min-h-svh flex-1 flex-col gap-5 px-5 pt-5 pb-30 lg:p-5',
+        'flex min-h-svh flex-1 flex-col gap-5 px-5 pt-5 lg:p-5',
         className,
+        { 'pb-30': sidebar },
+        { 'pb-5': !sidebar },
       )}
     >
       <div
@@ -46,7 +48,7 @@ export const Page = ({
       {footer && <Footer />}
       {logo && (
         <QcIcoOutline
-          className="text-primary/5 pointer-events-none fixed bottom-40 left-[calc(40%+100px)] lg:left-[calc(60%+100px)] -z-1 h-[40vh] w-[40vh]  md:h-[27vw] md:w-[27vw]"
+          className="text-primary/5 pointer-events-none fixed bottom-40 left-[calc(40%+100px)] -z-1 h-[40vh] w-[40vh] md:h-[27vw] md:w-[27vw] lg:left-[calc(60%+100px)]"
           size={400}
         />
       )}

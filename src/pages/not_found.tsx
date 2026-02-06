@@ -7,7 +7,6 @@ export const NotFound = () => {
     <Page
       contentCl="flex-col items-center justify-center gap-2 pb-50 text-center"
       sidebar={false}
-      burger={false}
       logo={false}
       footer={false}
     >
