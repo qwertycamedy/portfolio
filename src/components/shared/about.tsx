@@ -6,11 +6,11 @@ import meImg from '@/assets/img/me.jpg';
 
 export const About = () => {
   return (
-    <Element name={navLinks[1].path} id={navLinks[1].path}>
+    <Element name={navLinks[3].path} id={navLinks[3].path}>
       <Card className={'flex flex-col gap-8'}>
         <SectionTitle text="Обо мне" />
-        <div className="flex gap-6.5">
-          <p className="text-sm">
+        <div className="flex flex-col-reverse md:flex-row gap-6.5">
+          <p className="text-sm text-justify">
             Всем привет, меня зовут Адиль! <br />
             <br /> Я обычный парень из “глубинки”, который мечтает просто жить и
             не волноваться по проблемам из ряда “ой, зарплата не скоро, надо
@@ -22,7 +22,7 @@ export const About = () => {
             сайтец!
           </p>
           <img
-            className="bg-primary flex h-50 w-50 rounded-full"
+            className="bg-primary flex h-50 w-50 rounded-full mx-auto md:mx-0"
             width={200}
             height={200}
             src={meImg}

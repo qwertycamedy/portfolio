@@ -16,7 +16,7 @@ export const Projects = () => {
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
-    <Element name={navLinks[2].path} id={navLinks[2].path}>
+    <Element name={navLinks[1].path} id={navLinks[1].path}>
       <Card className="min-h-0 min-w-0 flex-col gap-10">
         <div className="flex items-center justify-between gap-10">
           <SectionTitle text="Портфолио" />

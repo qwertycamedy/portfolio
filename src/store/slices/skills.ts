@@ -3,15 +3,22 @@ import type { RootState } from '@/store/store';
 import { TSkill } from '@/types';
 import {
   CssIco,
+  FigmaIco,
   HtmlIco,
   JsIco,
+  MaterialuiIco,
   NextIco,
   ReactIco,
   ReduxIco,
+  RestapiIco,
   ShadcnuiIco,
   TailwindIco,
   TsIco,
   ZustandIco,
+  SassIco,
+  GithubIco,
+  TestjsIco,
+  ManagementIco,
 } from '@/components/icons';
 
 type TSkillsState = {
@@ -66,9 +73,44 @@ const initialState: TSkillsState = {
       icon: TailwindIco,
     },
     {
+      title: 'Rest API',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: RestapiIco,
+    },
+    {
+      title: 'Github',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: GithubIco,
+    },
+    {
+      title: 'Тестирование',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: TestjsIco,
+    },
+    {
+      title: 'Проект-Менеджмент',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: ManagementIco,
+    },
+    {
+      title: 'Sass | Scss',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: SassIco,
+    },
+    {
       title: 'Shadcnui',
       description: `Фреймворк с React внутри, дающий четкие правила разработки`,
       icon: ShadcnuiIco,
+    },
+    {
+      title: 'MaterialUI',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: MaterialuiIco,
+    },
+    {
+      title: 'Figma',
+      description: `Фреймворк с React внутри, дающий четкие правила разработки`,
+      icon: FigmaIco,
     },
   ],
 };

@@ -8,3 +8,12 @@ export * from './redux';
 export * from './tailwind';
 export * from './shadcnui';
 export * from './zustand';
+export * from './figma';
+export * from './management';
+export * from './materialui';
+export * from './restapi';
+export * from './testjs';
+export * from './github';
+export * from './sass'
+export * from './qc_ico_outline'
+export * from './burger'

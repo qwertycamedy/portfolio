@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 export const NotFound = () => {
   return (
     <Page
-      className="items-center justify-center gap-2 pb-50 text-center"
+      contentCl="flex-col items-center justify-center gap-2 pb-50 text-center"
       sidebar={false}
+      burger={false}
+      logo={false}
+      footer={false}
     >
       <Title text="404" size={TitleSizes.h1} className="text-7xl!" />
       <p className="text-md mb-8">

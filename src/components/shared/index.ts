@@ -1,5 +1,8 @@
+export { NetworkLinks } from './_common/network_links';
 export { Sidebar } from './_common/sidebar';
-export { QcIcoOutline } from './_common/qc_ico_outline';
+export { Burger } from './_common/burger/burger';
+export { BurgerMenu } from './_common/burger/menu';
+export { Footer } from './_common/footer';
 export { SectionTitle } from './_common/section_title';
 export { SliderNavigation } from './_common/slider_nav';
 export { Hero } from './hero';

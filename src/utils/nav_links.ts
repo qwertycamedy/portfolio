@@ -23,11 +23,6 @@ export const navLinks: navLink[] = [
     icon: RotateCcw,
   },
   {
-    path: 'about',
-    text: 'Обо мне',
-    icon: Smile,
-  },
-  {
     path: 'works',
     text: 'Портфолио',
     icon: Grid2X2,
@@ -36,5 +31,10 @@ export const navLinks: navLink[] = [
     path: 'skills',
     text: 'Скиллы',
     icon: CircleGauge,
+  },
+  {
+    path: 'about',
+    text: 'Обо мне',
+    icon: Smile,
   },
 ];

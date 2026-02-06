@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { Card, Title, TitleSizes } from '@/components/ui';
 import meImg from '@/assets/img/me.jpg';
-import { cn, navLinks, networkLinks } from '@/utils';
+import { cn, navLinks } from '@/utils';
 import { useScrollBottomMonitor } from '@/hooks';
+import { NetworkLinks } from './network_links';
 
 export const Sidebar = () => {
   const isBottom = useScrollBottomMonitor(navLinks[3].path);
@@ -28,19 +28,7 @@ export const Sidebar = () => {
             Frontend developer
           </p>
         </div>
-        <ul className="flex gap-3.5">
-          {networkLinks.map((networkLink) => (
-            <li key={networkLink.path}>
-              <Link
-                className="bg-primary flex h-7.5 w-7.5 items-center justify-center overflow-hidden rounded-full text-lg transition-opacity hover:opacity-60"
-                to={networkLink.path}
-                target="_blank"
-              >
-                {networkLink.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <NetworkLinks />
         <ul className="flex flex-col gap-3 pl-3.5">
           {navLinks.map((navLink) => (
             <li key={navLink.path}>

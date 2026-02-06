@@ -1,4 +1,4 @@
-import { QcIcoOutline, SliderNavigation } from '@/components/shared';
+import { SliderNavigation } from '@/components/shared';
 import {
   Button,
   Card,
@@ -15,11 +15,12 @@ import { projectsSel } from '@/store';
 import { TProject } from '@/types';
 import { AppWindowMac, ChevronLeft, Github } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 
 export const Project = () => {
   const { project_name } = useParams();
+  const navigate = useNavigate();
   const swiperRef = useRef<SwiperRef>(null);
   const { projects } = useAppSelector(projectsSel);
   const [project, setProject] = useState<TProject | null | undefined>(null);
@@ -29,7 +30,11 @@ export const Project = () => {
       (project) => project.name === project_name,
     );
 
-    setProject(curProject);
+    if (curProject) {
+      setProject(curProject);
+    } else {
+      navigate('*');
+    }
   }, [projects]);
 
   const clickOnImg = (e: React.MouseEvent<HTMLImageElement>) => {
@@ -43,8 +48,13 @@ export const Project = () => {
   };
 
   return (
-    <Page className={'relative z-1'} sidebar={false}>
-      <Card className="relative items-center justify-between gap-8 p-4">
+    <Page
+      className={'relative z-1'}
+      contentCl={'flex-col'}
+      sidebar={false}
+      burger={false}
+    >
+      <Card className="relative items-center justify-between gap-8 py-4 pr-8 pl-4 md:p-4">
         <Link to={'/'}>
           <Button className="pr-6!">
             <ChevronLeft /> Go Back
@@ -52,25 +62,25 @@ export const Project = () => {
         </Link>
         {project_name && (
           <Title
-            className={'absolute left-1/2 -translate-x-1/2'}
+            className={'md:absolute md:left-1/2 md:-translate-x-1/2'}
             text={project_name}
             size={TitleSizes.h3}
           />
         )}
       </Card>
-      <div className="grid grid-cols-8 gap-5">
+      <div className="flex flex-col gap-5 xl:grid xl:grid-cols-8">
         {project ? (
           <Card className="col-start-1 col-end-6 min-h-0 min-w-0 flex-col items-center justify-center gap-2 p-4">
             <Swiper
               ref={swiperRef}
-              className="mySwiper w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
+              className="mySwiper max-h-[50svh] w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
               slidesPerView={1}
             >
               {project?.imageUrls.map((imageUrl) => (
                 <SwiperSlide key={imageUrl}>
                   <div className="flex h-full items-center justify-center">
                     <img
-                      className="w-full rounded-2xl"
+                      className="w-full rounded-2xl object-cover"
                       src={imageUrl}
                       alt={`${project.name} project | Qwertycamedy Frontend Developer`}
                       width={300}
@@ -95,7 +105,7 @@ export const Project = () => {
           <Card className={'col-start-6 col-end-9 flex-col gap-6 px-4 py-6'}>
             <div className="flex flex-col gap-2">
               <Title text="Стэк примененных технологий:" size={TitleSizes.h5} />
-              <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm">
+              <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-xs md:text-sm">
                 {project.categories.map((category, i) => (
                   <li>
                     {category} {project.categories.length > ++i && '|'}
@@ -106,7 +116,7 @@ export const Project = () => {
 
             <div className="flex flex-col gap-2">
               <Title text="Описание:" size={TitleSizes.h5} />
-              <span className="text-secondary-foreground text-justify text-sm">
+              <span className="text-secondary-foreground text-justify text-xs md:text-sm">
                 {project.description}
               </span>
             </div>
@@ -145,7 +155,6 @@ export const Project = () => {
           <Skeleton className="col-start-6 col-end-9 h-140" />
         )}
       </div>
-      <QcIcoOutline />
     </Page>
   );
 };
