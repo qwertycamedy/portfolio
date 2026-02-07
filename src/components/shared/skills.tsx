@@ -6,12 +6,12 @@ import { Element } from 'react-scroll';
 export const Skills = () => {
   return (
     <Element name={navLinks[2].path} id={navLinks[2].path}>
-      <Card className={'text-background dark:text-foreground flex-col gap-10'}>
+      <Card className={' flex-col gap-10'}>
         <SectionTitle text="Скиллы" />
         <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 xl:grid-cols-6">
           {skills.map((skill, i) => (
             <div
-              className="bg-muted flex flex-col overflow-hidden rounded-xl"
+              className="bg-muted flex flex-col overflow-hidden rounded-xl text-background dark:text-foreground"
               key={skill.title + i}
             >
               <div className="bg-primary truncate p-2 text-center text-xs ...">
