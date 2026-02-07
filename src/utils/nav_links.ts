@@ -14,6 +14,10 @@ export const networkLinks: networkLink[] = [
     path: 'https://qwertycamedy-portfolio.vercel.app/resume_Adil_Kairbekov_Frontend_Developer.pdf',
     text: 'hh',
   },
+  {
+    path: 'https://github.com/qwertycamedy',
+    text: 'git',
+  },
 ];
 
 export const navLinks: navLink[] = [
