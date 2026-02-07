@@ -75,40 +75,40 @@
 
   --destructive: #aa4042;
 
-  --background: #020013;
-  --foreground: #fff;
+  --background: rgb(226, 229, 238);
+  --foreground: #020013;
 
-  --card: #100f1e;
-  --card-foreground: #fff;
+  --card: #fff;
+  --card-foreground: #100f1e;
 
-  --card-opacity: #100f1e95;
-  --card-opacity-foreground: #fff;
+  --card-opacity: #fff;
+  --card-opacity-foreground: #100f1e95;
 
-  --popover: #100f1e;
-  --popover-foreground: #ffffff80;
+  --popover: #ffffff80;
+  --popover-foreground: #100f1e;
 
-  --badge: #283249;
-  --badge-foreground: #fff;
+  --badge: #fff;
+  --badge-foreground: #283249;
 
-  --deep: #0e1016;
-  --deep-foreground: #d8dadc;
+  --deep: #d8dadc;
+  --deep-foreground: #0e1016;
 
-  --primary: #6368e2;
+  --primary: #797eff;
   --primary-foreground: #fff;
 
-  --secondary: #100f1e;
-  --secondary-foreground: #a2a4ac;
-  --secondary-card-background: #283249;
+  --secondary: #a2a4ac;
+  --secondary-foreground: #100f1e;
+  --secondary-card-background: #d1d1d1;
 
-  --muted: #100f1e;
-  --muted-foreground: #a2a4ac;
+  --muted: rgb(226, 229, 238);
+  --muted-foreground: #100f1e;
 
-  --accent: #100f1e;
-  --accent-foreground: #a2a4ac;
+  --accent: #a2a4ac;
+  --accent-foreground: #100f1e;
 
-  --border: #ffffff10;
-  --input: #ffffff10;
-  --ring: #a1a1a1;
+  --border: #e6e6e6e3;
+  --input: #e6e6e6e3;
+  --ring: #212121;
 
   --sidebar: #100f1e;
   --sidebar-foreground: #ffffff70;

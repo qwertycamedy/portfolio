@@ -1,5 +1,6 @@
 export { NetworkLinks } from './_common/network_links';
 export { Sidebar } from './_common/sidebar';
+export { ThemeSwitcher } from './_common/theme_switcher';
 export { Burger } from './_common/burger/burger';
 export { BurgerMenu } from './_common/burger/menu';
 export { Footer } from './_common/footer';

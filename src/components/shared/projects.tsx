@@ -58,7 +58,7 @@ export const Projects = () => {
                   src={project.imageUrls[0]}
                   alt={`${project.name} Qwertycamedy Frontend`}
                 />
-                <div className="flex flex-col items-center justify-center">
+                <div className="text-background dark:text-foreground flex flex-col items-center justify-center">
                   <Title
                     text={project.name}
                     size={TitleSizes.h6}

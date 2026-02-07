@@ -9,6 +9,7 @@ export const NotFound = () => {
       sidebar={false}
       logo={false}
       footer={false}
+      theme={false}
     >
       <Title text="404" size={TitleSizes.h1} className="text-7xl!" />
       <p className="text-md mb-8">

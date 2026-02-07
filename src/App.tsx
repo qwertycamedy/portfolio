@@ -1,7 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home, NotFound, Project } from '@/pages';
+import { useThemeSync } from './hooks';
 
 function App() {
+  useThemeSync();
+
   return (
     <main>
       <Routes>

@@ -1,15 +1,12 @@
-import { navLinks } from '@/utils';
+import { navLinks, skills } from '@/utils';
 import { Card } from '@/components/ui';
 import { SectionTitle } from '@/components/shared';
 import { Element } from 'react-scroll';
-import { useAppSelector } from '@/hooks';
-import { skillsSel } from '@/store/slices/skills';
 
 export const Skills = () => {
-  const { skills } = useAppSelector(skillsSel);
   return (
     <Element name={navLinks[2].path} id={navLinks[2].path}>
-      <Card className={'flex-col gap-10'}>
+      <Card className={'text-background dark:text-foreground flex-col gap-10'}>
         <SectionTitle text="Скиллы" />
         <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 xl:grid-cols-6">
           {skills.map((skill, i) => (
@@ -21,7 +18,10 @@ export const Skills = () => {
                 <span>{skill.title}</span>
               </div>
               <div className="flex items-center justify-center px-4 py-8">
-                <skill.icon size={60} className={'text-primary/30'} />
+                <skill.icon
+                  size={60}
+                  className={'text-primary/50 dark:text-primary/30'}
+                />
               </div>
               {/* <div>
                 <p>{skill.description}</p>

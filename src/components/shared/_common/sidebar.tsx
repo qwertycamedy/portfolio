@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { Card, Title, TitleSizes } from '@/components/ui';
-import meImg from '@/assets/img/me.jpg';
 import { cn, navLinks } from '@/utils';
 import { useIsMobile, useScrollBottomMonitor } from '@/hooks';
-import { NetworkLinks } from './network_links';
+import { Card, Title, TitleSizes } from '@/components/ui';
+import { NetworkLinks } from '@/components/shared';
+import meImg from '@/assets/img/me.jpg';
 
 export const Sidebar = () => {
   const { isMobile, isTablet } = useIsMobile();
@@ -30,7 +30,7 @@ export const Sidebar = () => {
         {!isMobile && !isTablet && (
           <>
             <img
-              className="h-19 w-19 rounded-full scale-x-[-1]"
+              className="h-19 w-19 scale-x-[-1] rounded-full"
               src={meImg}
               alt="Adil Kairbekov qwertycamedy Frontend Developer"
             />
@@ -74,7 +74,7 @@ export const Sidebar = () => {
                 />
                 <span
                   className={cn(
-                    'bg-primary text-foreground flex h-10 w-10 items-center justify-center overflow-hidden rounded-full opacity-70 transition-all lg:h-5 lg:w-5 lg:translate-y-0 lg:opacity-100 lg:transition-none',
+                    'bg-primary text-background dark:text-foreground flex h-10 w-10 items-center justify-center overflow-hidden rounded-full opacity-70 transition-all lg:h-5 lg:w-5 lg:translate-y-0 lg:opacity-100 lg:transition-none',
                     {
                       'rotate-180': navLink.path === 'about',
                       '-translate-y-1 opacity-100':

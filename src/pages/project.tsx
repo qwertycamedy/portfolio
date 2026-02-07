@@ -30,11 +30,13 @@ export const Project = () => {
       (project) => project.name === project_name,
     );
 
-    if (curProject) {
-      setProject(curProject);
-    } else {
-      navigate('*');
-    }
+    setTimeout(() => {
+      if (curProject) {
+        setProject(curProject);
+      } else {
+        navigate('*');
+      }
+    }, 750);
   }, [projects]);
 
   const clickOnImg = (e: React.MouseEvent<HTMLImageElement>) => {
@@ -48,11 +50,7 @@ export const Project = () => {
   };
 
   return (
-    <Page
-      className={'relative z-1'}
-      contentCl={'flex-col'}
-      sidebar={false}
-    >
+    <Page className={'relative z-1'} contentCl={'flex-col'} sidebar={false}>
       <Card className="relative items-center justify-between gap-8 py-4 pr-8 pl-4 md:p-4">
         <Link to={'/'}>
           <Button className="pr-6!">
@@ -72,14 +70,14 @@ export const Project = () => {
           <Card className="col-start-1 col-end-6 min-h-0 min-w-0 flex-col items-center justify-center gap-2 p-4">
             <Swiper
               ref={swiperRef}
-              className="mySwiper max-h-[50svh] w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
+              className="mySwiper w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
               slidesPerView={1}
             >
               {project?.imageUrls.map((imageUrl) => (
                 <SwiperSlide key={imageUrl}>
-                  <div className="flex h-full items-center justify-center">
+                  <div className="flex h-full items-center justify-center rounded-2xl">
                     <img
-                      className="w-full rounded-2xl object-cover"
+                      className="max-h-[50svh] w-full rounded-2xl object-cover"
                       src={imageUrl}
                       alt={`${project.name} project | Qwertycamedy Frontend Developer`}
                       width={300}

@@ -1,7 +1,7 @@
 import { cn } from '@/utils';
 import { ReactNode } from 'react';
 import { ClassNameValue } from 'tailwind-merge';
-import { Footer, Sidebar } from '@/components/shared';
+import { Footer, Sidebar, ThemeSwitcher } from '@/components/shared';
 import { QcIcoOutline } from '@/components/icons';
 
 export const Page = ({
@@ -9,6 +9,7 @@ export const Page = ({
   // burger = true,
   footer = true,
   logo = true,
+  theme = true,
   className,
   contentCl,
   children,
@@ -17,12 +18,11 @@ export const Page = ({
   // burger?: boolean;
   footer?: boolean;
   logo?: boolean;
+  theme?: boolean;
   className?: ClassNameValue;
   contentCl?: ClassNameValue;
   children: ReactNode;
 }) => {
-  // const { isMobile, isTablet } = useIsMobile();
-
   return (
     <div
       className={cn(
@@ -35,16 +35,10 @@ export const Page = ({
       <div
         className={cn('mx-auto flex w-full max-w-7xl flex-1 gap-5', contentCl)}
       >
-        {/* {!isMobile && !isTablet && sidebar && <Sidebar />} */}
         {sidebar && <Sidebar />}
         {children}
+        {theme && <ThemeSwitcher />}
       </div>
-      {/* {(isMobile || isTablet) && burger && (
-        <>
-          <Burger />
-          <BurgerMenu />
-        </>
-      )} */}
       {footer && <Footer />}
       {logo && (
         <QcIcoOutline
