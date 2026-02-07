@@ -30,14 +30,14 @@ export const Sidebar = () => {
         {!isMobile && !isTablet && (
           <>
             <img
-              className="h-19 w-19 rounded-full"
+              className="h-19 w-19 rounded-full scale-x-[-1]"
               src={meImg}
               alt="Adil Kairbekov qwertycamedy Frontend Developer"
             />
             <div className="flex flex-col gap-2">
-              <Title text="Adil Kairbekov" size={TitleSizes.h5} />
+              <Title text="Адиль Каирбеков" size={TitleSizes.h5} />
               <p className="text-secondary-foreground text-xs">
-                Frontend developer
+                Frontend Разработчик
               </p>
             </div>
             <NetworkLinks />

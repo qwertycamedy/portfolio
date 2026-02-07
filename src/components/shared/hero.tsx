@@ -14,7 +14,7 @@ export const Hero = () => {
         <p className="text-secondary-foreground mb-1 lg:mb-2 text-xs md:text-sm lg:text-base">Qwerty Camedy</p>
         <Title
           className={'mb-3.5 lg:mb-5'}
-          text="Frontend Developer"
+          text="Frontend Разработчик"
           size={TitleSizes.h1}
         />
         {isMobile || isTablet ? (
