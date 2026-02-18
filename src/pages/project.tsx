@@ -10,20 +10,20 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui';
-import { useAppSelector } from '@/hooks';
-import { projectsSel } from '@/store';
+import { useSwiperNavigation } from '@/hooks';
+import { projects } from '@/store';
 import { TProject } from '@/types';
 import { AppWindowMac, ChevronLeft, Github } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const Project = () => {
   const { project_name } = useParams();
   const navigate = useNavigate();
-  const swiperRef = useRef<SwiperRef>(null);
-  const { projects } = useAppSelector(projectsSel);
   const [project, setProject] = useState<TProject | null | undefined>(null);
+  const { swiperRef, handleSlideChange, handleSwiperInit, isBeginning, isEnd } =
+    useSwiperNavigation();
 
   useEffect(() => {
     const curProject = projects.find(
@@ -72,12 +72,14 @@ export const Project = () => {
               ref={swiperRef}
               className="mySwiper w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
               slidesPerView={1}
+              onInit={handleSwiperInit}
+              onSlideChange={handleSlideChange}
             >
               {project?.imageUrls.map((imageUrl) => (
                 <SwiperSlide key={imageUrl}>
                   <div className="flex h-full items-center justify-center rounded-2xl">
                     <img
-                      className="max-h-[50svh] w-full rounded-2xl object-cover"
+                      className="max-h-[50svh] w-full rounded-2xl object-contain"
                       src={imageUrl}
                       alt={`${project.name} project | Qwertycamedy Frontend Developer`}
                       width={300}
@@ -92,6 +94,8 @@ export const Project = () => {
               <SliderNavigation
                 onPrev={() => swiperRef?.current?.swiper.slidePrev()}
                 onNext={() => swiperRef?.current?.swiper.slideNext()}
+                isPrevDisabled={isBeginning}
+                isNextDisabled={isEnd}
               />
             )}
           </Card>
@@ -104,7 +108,7 @@ export const Project = () => {
               <Title text="Стэк примененных технологий:" size={TitleSizes.h5} />
               <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-xs md:text-sm">
                 {project.categories.map((category, i) => (
-                  <li>
+                  <li key={category}>
                     {category} {project.categories.length > ++i && '|'}
                   </li>
                 ))}
@@ -121,30 +125,34 @@ export const Project = () => {
             <div className="flex items-center gap-4">
               <Title text="Ссылки:" size={TitleSizes.h5} />
               <div className="flex gap-2">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link to={project.githubUrl} target="_blank">
-                      <Button size={'icon'}>
-                        <Github />
-                      </Button>
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Github</p>
-                  </TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link to={project.siteUrl} target="_blank">
-                      <Button size={'icon'}>
-                        <AppWindowMac />
-                      </Button>
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Ссылка на проект</p>
-                  </TooltipContent>
-                </Tooltip>
+                {project.githubUrl && (
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link to={project.githubUrl} target="_blank">
+                        <Button size={'icon'}>
+                          <Github />
+                        </Button>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Github</p>
+                    </TooltipContent>
+                  </Tooltip>
+                )}
+                {project.siteUrl && (
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link to={project.siteUrl} target="_blank">
+                        <Button size={'icon'}>
+                          <AppWindowMac />
+                        </Button>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Ссылка на проект</p>
+                    </TooltipContent>
+                  </Tooltip>
+                )}
               </div>
             </div>
           </Card>

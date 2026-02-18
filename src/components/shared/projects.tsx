@@ -1,19 +1,25 @@
-import { useRef } from 'react';
 import { Element } from 'react-scroll';
-import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
+import { ChevronRight } from 'lucide-react';
 
+import { projects } from '@/store';
 import { navLinks } from '@/utils';
 import { Button, Card, Title, TitleSizes } from '@/components/ui';
 import { SectionTitle, SliderNavigation } from '@/components/shared';
 
-import { projectsSel } from '@/store';
-import { useAppSelector } from '@/hooks';
-import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { useSwiperNavigation } from '@/hooks';
 
 export const Projects = () => {
-  const { projects } = useAppSelector(projectsSel);
-  const swiperRef = useRef<SwiperRef>(null);
+  const {
+    swiperRef,
+    handleSlideChange,
+    handleSwiperInit,
+    goNext,
+    goPrev,
+    isBeginning,
+    isEnd,
+  } = useSwiperNavigation();
 
   return (
     <Element name={navLinks[1].path} id={navLinks[1].path}>
@@ -21,8 +27,10 @@ export const Projects = () => {
         <div className="flex items-center justify-between gap-10">
           <SectionTitle text="Портфолио" />
           <SliderNavigation
-            onPrev={() => swiperRef?.current?.swiper.slidePrev()}
-            onNext={() => swiperRef?.current?.swiper.slideNext()}
+            onPrev={goPrev}
+            onNext={goNext}
+            isPrevDisabled={isBeginning}
+            isNextDisabled={isEnd}
           />
         </div>
 
@@ -41,11 +49,13 @@ export const Projects = () => {
             },
           }}
           spaceBetween={20}
+          onInit={handleSwiperInit}
+          onSlideChange={handleSlideChange}
         >
-          {projects.map((project, i) => (
+          {projects.map((project) => (
             <SwiperSlide
               className="bg-primary max-w-ful group relative overflow-hidden rounded-3xl p-1"
-              key={project.name + i}
+              key={project.name}
             >
               <Link
                 className="flex flex-1 flex-col gap-4.5 pb-8"
@@ -58,18 +68,21 @@ export const Projects = () => {
                   src={project.imageUrls[0]}
                   alt={`${project.name} Qwertycamedy Frontend`}
                 />
-                <div className="text-background dark:text-foreground flex flex-col items-center justify-center">
+                <div className="text-background dark:text-foreground flex flex-col items-center justify-center gap-1.5 md:gap-0">
                   <Title
                     text={project.name}
-                    size={TitleSizes.h6}
+                    size={TitleSizes.h5}
                     className="text-center"
                   />
-                  <div className="flex gap-1">
-                    {project.categories.map((category, i) => (
-                      <span>
-                        {category} {++i < project.categories.length && '|'}
+                  <div className="flex gap-1 text-xs md:text-base">
+                    {[...project.categories].slice(0, 3).map((category, i) => (
+                      <span key={category}>
+                        {category}{' '}
+                        {++i < [...project.categories].slice(0, 4).length &&
+                          '|'}
                       </span>
                     ))}
+                    {project.categories.length > 3 && '...'}
                   </div>
                 </div>
                 <span className="absolute top-0 left-0 flex h-full w-full items-center justify-center opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
