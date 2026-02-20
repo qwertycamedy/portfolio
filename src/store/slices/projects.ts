@@ -15,6 +15,12 @@ import project_3_img_0 from '@/assets/img/project_3_0.webp';
 import project_3_img_1 from '@/assets/img/project_3_1.webp';
 import project_3_img_2 from '@/assets/img/project_3_2.webp';
 
+import project_4_img_0 from '@/assets/img/project_4_0.webp';
+import project_4_img_1 from '@/assets/img/project_4_1.webp';
+import project_4_img_2 from '@/assets/img/project_4_2.webp';
+import project_4_img_3 from '@/assets/img/project_4_3.webp';
+import project_4_img_4 from '@/assets/img/project_4_4.webp';
+
 export const projects = [
   {
     imageUrls: [
@@ -87,5 +93,27 @@ export const projects = [
     ],
     githubUrl: 'https://github.com/qwertycamedy/status_rk_react',
     siteUrl: 'https://statusrk.kz/',
+  },
+  {
+    imageUrls: [
+      project_4_img_0,
+      project_4_img_1,
+      project_4_img_2,
+      project_4_img_3,
+      project_4_img_4,
+    ],
+    name: 'AlphaBeat',
+    description: `AlphaBeat — это мини-игра на React с использованием MockAPI, которая помогает тренировать 
+    знание алфавита в правильной последовательности и на скорость.\n
+    Игроку нужно как можно быстрее отметить все буквы по порядку. После завершения отображается результат — время прохождения.
+    Его можно сохранить в базу данных и затем увидеть в общем списке результатов. 
+    Также доступна возможность перезапуска игры для повторной попытки и улучшения своего рекорда.`,
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.react,
+      EProjectCategories.mockapi,
+    ],
+    githubUrl: 'https://github.com/qwertycamedy/alphaBeat',
+    siteUrl: 'https://alpha-beat.vercel.app/',
   },
 ];

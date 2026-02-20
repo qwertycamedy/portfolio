@@ -10,6 +10,7 @@ export enum EProjectCategories {
   redux = 'Redux-toolkit',
   tma = 'TMA',
   ton = 'TON',
+  mockapi = 'Mock API',
 }
 
 export type TProject = {
