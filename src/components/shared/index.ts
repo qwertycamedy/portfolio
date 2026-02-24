@@ -1,4 +1,5 @@
 export { NetworkLinks } from './_common/network_links';
+export { Switchers } from './_common/switchers';
 export { Sidebar } from './_common/sidebar';
 export { ThemeSwitcher } from './_common/theme_switcher';
 export { Burger } from './_common/burger/burger';

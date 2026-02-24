@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { cn, navLinks } from '@/utils';
 import { useIsMobile, useScrollBottomMonitor } from '@/hooks';
+import { NetworkLinks, Switchers } from '@/components/shared';
 import { Card, Title, TitleSizes } from '@/components/ui';
-import { NetworkLinks } from '@/components/shared';
 import meImg from '@/assets/img/me.jpg';
 
 export const Sidebar = () => {
@@ -24,7 +24,7 @@ export const Sidebar = () => {
     >
       <Card
         className={cn(
-          'mx-auto w-max flex-col gap-5 rounded-full px-8 pt-5 pb-5 shadow-2xl backdrop-blur-lg md:rounded-full md:px-8 md:pt-5 md:pb-5 lg:mx-0 lg:w-auto lg:px-5.5 lg:pt-5.5 lg:pb-12 lg:shadow-none lg:backdrop-blur-none',
+          'mx-auto w-max flex-col gap-7 rounded-full px-8 pt-5 pb-5 shadow-2xl backdrop-blur-lg md:rounded-full md:px-8 md:pt-5 md:pb-5 lg:mx-0 lg:w-auto lg:px-5.5 lg:pt-5.5 lg:pb-12 lg:shadow-none lg:backdrop-blur-none',
         )}
       >
         {!isMobile && !isTablet && (
@@ -90,6 +90,8 @@ export const Sidebar = () => {
             </li>
           ))}
         </ul>
+
+        {!isMobile && !isTablet && <Switchers />}
       </Card>
     </aside>
   );
