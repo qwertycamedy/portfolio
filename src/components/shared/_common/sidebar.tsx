@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { cn, navLinks } from '@/utils';
 import { useIsMobile, useScrollBottomMonitor } from '@/hooks';
+import { NetworkLinks, Switchers } from '@/components/shared';
 import { Card, Title, TitleSizes } from '@/components/ui';
-import { NetworkLinks } from '@/components/shared';
 import meImg from '@/assets/img/me.jpg';
+import { useTranslation } from 'react-i18next';
 
 export const Sidebar = () => {
+  const {t} = useTranslation();
   const { isMobile, isTablet } = useIsMobile();
   const isBottom = useScrollBottomMonitor(navLinks[3].path);
   const [activeNavLink, setActiveNavLink] = useState<string>(navLinks[0].path);
@@ -24,7 +26,7 @@ export const Sidebar = () => {
     >
       <Card
         className={cn(
-          'mx-auto w-max flex-col gap-5 rounded-full px-8 pt-5 pb-5 shadow-2xl backdrop-blur-lg md:rounded-full md:px-8 md:pt-5 md:pb-5 lg:mx-0 lg:w-auto lg:px-5.5 lg:pt-5.5 lg:pb-12 lg:shadow-none lg:backdrop-blur-none',
+          'mx-auto w-max flex-col gap-7 rounded-full px-8 pt-5 pb-5 shadow-2xl backdrop-blur-lg md:rounded-full md:px-8 md:pt-5 md:pb-5 lg:mx-0 lg:w-auto lg:px-5.5 lg:pt-5.5 lg:pb-12 lg:shadow-none lg:backdrop-blur-none',
         )}
       >
         {!isMobile && !isTablet && (
@@ -35,9 +37,9 @@ export const Sidebar = () => {
               alt="Adil Kairbekov qwertycamedy Frontend Developer"
             />
             <div className="flex flex-col gap-2">
-              <Title text="Адиль Каирбеков" size={TitleSizes.h5} />
+              <Title text={t('sidebar.title')} size={TitleSizes.h5} />
               <p className="text-secondary-foreground text-xs">
-                Frontend Разработчик
+                {t('sidebar.subtitle')}
               </p>
             </div>
             <NetworkLinks />
@@ -85,11 +87,13 @@ export const Sidebar = () => {
                 >
                   <navLink.icon size={14} />
                 </span>
-                {!isMobile && !isTablet && <span>{navLink.text}</span>}
+                {!isMobile && !isTablet && <span>{t(navLink.text)}</span>}
               </ScrollLink>
             </li>
           ))}
         </ul>
+
+        {!isMobile && !isTablet && <Switchers />}
       </Card>
     </aside>
   );

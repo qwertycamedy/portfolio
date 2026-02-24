@@ -15,10 +15,12 @@ import { projects } from '@/store';
 import { TProject } from '@/types';
 import { AppWindowMac, ChevronLeft, Github } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const Project = () => {
+  const { t } = useTranslation();
   const { project_name } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState<TProject | null | undefined>(null);
@@ -54,13 +56,13 @@ export const Project = () => {
       <Card className="relative items-center justify-between gap-8 py-4 pr-8 pl-4 md:p-4">
         <Link to={'/'}>
           <Button className="pr-6!">
-            <ChevronLeft /> Go Back
+            <ChevronLeft /> {t('go_back')}
           </Button>
         </Link>
-        {project_name && (
+        {project && (
           <Title
             className={'md:absolute md:left-1/2 md:-translate-x-1/2'}
-            text={project_name}
+            text={t(project.name)}
             size={TitleSizes.h3}
           />
         )}
@@ -81,7 +83,7 @@ export const Project = () => {
                     <img
                       className="max-h-[50svh] w-full rounded-2xl object-contain"
                       src={imageUrl}
-                      alt={`${project.name} project | Qwertycamedy Frontend Developer`}
+                      alt={`${t(project.name)} project | Qwertycamedy Frontend Developer`}
                       width={300}
                       height={150}
                       onClick={clickOnImg}
@@ -105,7 +107,7 @@ export const Project = () => {
         {project ? (
           <Card className={'col-start-6 col-end-9 flex-col gap-6 px-4 py-6'}>
             <div className="flex flex-col gap-2">
-              <Title text="Стэк примененных технологий:" size={TitleSizes.h5} />
+              <Title text={t('project.stack')} size={TitleSizes.h5} />
               <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-xs md:text-sm">
                 {project.categories.map((category, i) => (
                   <li key={category}>
@@ -116,14 +118,14 @@ export const Project = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <Title text="Описание:" size={TitleSizes.h5} />
+              <Title text={t('project.description')} size={TitleSizes.h5} />
               <span className="text-secondary-foreground text-justify text-xs md:text-sm">
-                {project.description}
+                {t(project.description)}
               </span>
             </div>
 
             <div className="flex items-center gap-4">
-              <Title text="Ссылки:" size={TitleSizes.h5} />
+              <Title text={t('project.links')} size={TitleSizes.h5} />
               <div className="flex gap-2">
                 {project.githubUrl && (
                   <Tooltip>
@@ -149,7 +151,7 @@ export const Project = () => {
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Ссылка на проект</p>
+                      <p>{t('project.link_to_project')}</p>
                     </TooltipContent>
                   </Tooltip>
                 )}
