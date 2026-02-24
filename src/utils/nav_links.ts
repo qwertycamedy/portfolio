@@ -23,22 +23,22 @@ export const networkLinks: networkLink[] = [
 export const navLinks: navLink[] = [
   {
     path: 'hero',
-    text: 'Начало',
+    text: 'navLinks.hero',
     icon: RotateCcw,
   },
   {
     path: 'works',
-    text: 'Портфолио',
+    text: 'navLinks.works',
     icon: Grid2X2,
   },
   {
     path: 'skills',
-    text: 'Скиллы',
+    text: 'navLinks.skills',
     icon: CircleGauge,
   },
   {
     path: 'about',
-    text: 'Обо мне',
+    text: 'navLinks.about',
     icon: Smile,
   },
 ];

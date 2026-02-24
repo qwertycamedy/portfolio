@@ -5,8 +5,10 @@ import { useIsMobile, useScrollBottomMonitor } from '@/hooks';
 import { NetworkLinks, Switchers } from '@/components/shared';
 import { Card, Title, TitleSizes } from '@/components/ui';
 import meImg from '@/assets/img/me.jpg';
+import { useTranslation } from 'react-i18next';
 
 export const Sidebar = () => {
+  const {t} = useTranslation();
   const { isMobile, isTablet } = useIsMobile();
   const isBottom = useScrollBottomMonitor(navLinks[3].path);
   const [activeNavLink, setActiveNavLink] = useState<string>(navLinks[0].path);
@@ -35,9 +37,9 @@ export const Sidebar = () => {
               alt="Adil Kairbekov qwertycamedy Frontend Developer"
             />
             <div className="flex flex-col gap-2">
-              <Title text="Адиль Каирбеков" size={TitleSizes.h5} />
+              <Title text={t('sidebar.title')} size={TitleSizes.h5} />
               <p className="text-secondary-foreground text-xs">
-                Frontend Разработчик
+                {t('sidebar.subtitle')}
               </p>
             </div>
             <NetworkLinks />
@@ -85,7 +87,7 @@ export const Sidebar = () => {
                 >
                   <navLink.icon size={14} />
                 </span>
-                {!isMobile && !isTablet && <span>{navLink.text}</span>}
+                {!isMobile && !isTablet && <span>{t(navLink.text)}</span>}
               </ScrollLink>
             </li>
           ))}

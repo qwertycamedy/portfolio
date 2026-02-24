@@ -9,6 +9,7 @@ import { Button, Card, Title, TitleSizes } from '@/components/ui';
 import { SectionTitle, SliderNavigation } from '@/components/shared';
 
 import { useSwiperNavigation } from '@/hooks';
+import { useTranslation } from 'react-i18next';
 
 export const Projects = () => {
   const {
@@ -20,12 +21,13 @@ export const Projects = () => {
     isBeginning,
     isEnd,
   } = useSwiperNavigation();
+  const { t } = useTranslation();
 
   return (
     <Element name={navLinks[1].path} id={navLinks[1].path}>
       <Card className="min-h-0 min-w-0 flex-col gap-10">
         <div className="flex items-center justify-between gap-10">
-          <SectionTitle text="Портфолио" />
+          <SectionTitle text={t('projects.title')} />
           <SliderNavigation
             onPrev={goPrev}
             onNext={goNext}
@@ -70,7 +72,7 @@ export const Projects = () => {
                 />
                 <div className="text-background dark:text-foreground flex flex-col items-center justify-center gap-1.5 md:gap-0">
                   <Title
-                    text={project.name}
+                    text={t(project.name)}
                     size={TitleSizes.h5}
                     className="text-center"
                   />
@@ -87,7 +89,7 @@ export const Projects = () => {
                 </div>
                 <span className="absolute top-0 left-0 flex h-full w-full items-center justify-center opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
                   <Button>
-                    Дальше <ChevronRight />
+                    {t('projects.more')} <ChevronRight />
                   </Button>
                 </span>
               </Link>

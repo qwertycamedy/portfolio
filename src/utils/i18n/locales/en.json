@@ -1,7 +1,123 @@
 {
+  "go_back": "Go Back",
+  "sidebar": {
+    "title": "Adil Kairbekov",
+    "subtitle": "Frontend Developer"
+  },
+  "navLinks": {
+    "hero": "Home",
+    "works": "Portfolio",
+    "skills": "Skills",
+    "about": "About"
+  },
   "hero": {
     "suptitle": "Qwertycamedy",
     "title": "Frontend Developer",
     "button": "Hire me"
+  },
+  "projects": {
+    "title": "Projects",
+    "more": "More",
+    "projects": {
+      "auraWeb": {
+        "name": "Aura Web",
+        "description": "I fully developed the frontend for a decentralized exchange (DEX) on the TON blockchain from scratch. The project is built on React and Redux Toolkit, ensuring reliable application state management and data predictability. WebSockets are integrated for real-time market quotes, and interaction with the server occurs through REST API. The key feature of the interface is integration with Tonconnect, allowing users to connect their TON wallets directly through the application. After connection, all main operations become available: depositing funds to the platform, investing in liquidity pools, and instant withdrawal of funds. WebSockets provide real-time display of current market changes without page reload. The frontend architecture is designed with future scalability in mind. Currently, integration with EVM-compatible networks (Ethereum, BSC, and others) is in development, which will expand the platform's functionality and reach a wider audience in the future."
+      },
+      "auraTma": {
+        "name": "Aura TMA",
+        "description": "A Telegram Mini Application that combines gamification elements with trading learning mechanics. The project is built on React and Redux Toolkit, with backend interaction through REST API and WebSockets. Through Tonconnect, users connect their TON wallets and get access to all application functions directly inside Telegram. The main feature of the platform is learning trading basics in a game format. Users complete tasks (subscribing to Telegram channels, viewing content, and other activities) and receive tokens for them. There's also a mini-game where you need to 'catch' falling tokens, making the accumulation process more engaging. The interface displays token balance both on the exchange and in the connected wallet. A referral system works for user engagement: you can invite friends and receive bonuses. Accumulated tokens are available for withdrawal to the wallet or exchange through the built-in swap. The project shows how to effectively combine learning, game mechanics, and real financial operations in a Telegram mini-application format."
+      },
+      "statusRk": {
+        "name": "Status RK",
+        "description": "A turnkey corporate website — from design (in collaboration with a designer) to final deployment on the domain. The project was developed in close collaboration with a designer: we jointly worked out page structures, visual solutions, and user scenarios, after which I fully implemented the frontend in React with responsive layout for all device types. The website features a feedback form with email sending to the domain mailbox — handled by a lightweight PHP backend that I also wrote and integrated into the project. Users can fill in contact details, send a message, and it is guaranteed to be delivered to the company's mailbox without using third-party services. After development completion, I deployed the site to the domain, configured hosting, and ensured correct operation of all components in production. As a result, the client received a fully ready-to-use corporate website with clean code, a modern interface, and stable feedback functionality."
+      },
+      "alphaBeat": {
+        "name": "AlphaBeat",
+        "description": "AlphaBeat is a mini-game built with React and MockAPI that helps train alphabet knowledge in the correct sequence and speed. The player needs to mark all letters in order as quickly as possible. Upon completion, the result — completion time — is displayed. It can be saved to the database and then viewed in the overall results list. There's also an option to restart the game for another attempt and improve your record."
+      }
+    }
+  },
+  "project": {
+    "stack": "Stack of applied technologies:",
+    "description": "Description:",
+    "links": "Links:",
+    "link_to_project": "Link to the project"
+  },
+  "skills": {
+    "title": "Skills",
+    "skills": {
+      "html": {
+        "title": "HTML",
+        "description": "The project skeleton that holds everything together"
+      },
+      "css": {
+        "title": "CSS",
+        "description": "The appearance of the project"
+      },
+      "javascript": {
+        "title": "Javascript",
+        "description": "All the complex logic of the project"
+      },
+      "typescript": {
+        "title": "Typescript",
+        "description": "Typing JS for better understanding and interaction"
+      },
+      "react": {
+        "title": "React",
+        "description": "A huge library as a tool for fast and high-quality development"
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "description": "A framework with React inside, providing clear development rules"
+      },
+      "redux": {
+        "title": "Redux",
+        "description": "State manager for application data management"
+      },
+      "zustand": {
+        "title": "Zustand",
+        "description": "Lightweight state manager with simple API"
+      },
+      "tailwind": {
+        "title": "Tailwind",
+        "description": "Utility-first CSS framework for fast styling"
+      },
+      "restapi": {
+        "title": "Rest API",
+        "description": "Server interaction through HTTP requests"
+      },
+      "github": {
+        "title": "Github",
+        "description": "Platform for code hosting and team development"
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Writing tests for code reliability"
+      },
+      "projectManagement": {
+        "title": "Project Management",
+        "description": "Task management and team collaboration"
+      },
+      "sass": {
+        "title": "Sass | Scss",
+        "description": "CSS preprocessor with advanced features"
+      },
+      "shadcnui": {
+        "title": "Shadcnui",
+        "description": "Collection of reusable React components"
+      },
+      "materialui": {
+        "title": "MaterialUI",
+        "description": "Material Design styled component library"
+      },
+      "figma": {
+        "title": "Figma",
+        "description": "Tool for interface design and prototyping"
+      }
+    }
+  },
+  "about": {
+    "title": "About me",
+    "text": "Hi, I'm Adil, a front-end developer with 5 years of experience. <br />I develop and maintain projects on React / Next.js, covering the entire client side of web applications. <br /><br />During this time, I have worked in startups, established companies, and as a freelancer, so I have a good understanding of different processes, requirements, and development speeds. <br /> In projects, I took on the responsibility of front-end team lead: I participated in architectural decisions, code reviews, and team organization. <br /><br /> Layout, complex logic, working with APIs, optimization, and UX — I feel confident at every level of front-end development and know how to bring interfaces to production quality. <br /><br /> I will be happy to answer your questions and am open to further cooperation!"
   }
 }
