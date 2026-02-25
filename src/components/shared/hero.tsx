@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Element } from 'react-scroll';
 import { navLinks, networkLinks } from '@/utils';
 import { useIsMobile } from '@/hooks';
-import { NetworkLinks } from '@/components/shared';
+import { NetworkLinks, Switchers } from '@/components/shared';
 import { Button, Card, Title, TitleSizes } from '@/components/ui';
 
 export const Hero = () => {
@@ -12,7 +12,8 @@ export const Hero = () => {
 
   return (
     <Element name={navLinks[0].path} id={navLinks[0].path}>
-      <Card className="h-max flex-col">
+      <Card className="relative h-max flex-col">
+        {(isMobile || isTablet) && <Switchers isDropdown={true} />}
         <p className="text-secondary-foreground mb-1 text-xs md:text-sm lg:mb-2 lg:text-base">
           {t('hero.suptitle')}
         </p>

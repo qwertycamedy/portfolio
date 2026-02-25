@@ -93,7 +93,7 @@ export const Sidebar = () => {
           ))}
         </ul>
 
-        {!isMobile && !isTablet && <Switchers />}
+        {!isMobile && !isTablet && <Switchers isDropdown={false} />}
       </Card>
     </aside>
   );

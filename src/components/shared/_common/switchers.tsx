@@ -1,11 +1,6 @@
 import { themeSel, toggleTheme } from '@/store';
 import { ELocales, ETheme } from '@/types';
-import {
-  useAppDispatch,
-  useAppSelector,
-  useIsMobile,
-  useLocales,
-} from '@/hooks';
+import { useAppDispatch, useAppSelector, useLocales } from '@/hooks';
 import { Moon, Settings, Sun } from 'lucide-react';
 import {
   Button,
@@ -15,20 +10,18 @@ import {
   Switch,
 } from '@/components/ui';
 
-export const Switchers = () => {
-  const { isMobile, isTablet } = useIsMobile();
-
-  return isMobile || isTablet ? (
+export const Switchers = ({ isDropdown }: { isDropdown: boolean }) => {
+  return isDropdown ? (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           size={'icon-lg'}
-          className="bg-foreground text-primary hover:bg-foreground active:bg-foreground fixed right-5 bottom-9.5 z-1001 transition-opacity hover:opacity-70 active:opacity-70 lg:right-[unset] lg:bottom-14"
+          className="bg-foreground text-primary hover:bg-foreground active:bg-foreground absolute top-5 right-5 z-1001 transition-opacity hover:opacity-70 active:opacity-70"
         >
           <Settings />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent side='left' className="min-w-max p-4">
+      <DropdownMenuContent side="left" className="min-w-max p-4">
         <SwitchersContent />
       </DropdownMenuContent>
     </DropdownMenu>
