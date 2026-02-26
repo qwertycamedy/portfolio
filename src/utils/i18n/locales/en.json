@@ -18,6 +18,7 @@
   "projects": {
     "title": "Projects",
     "more": "More",
+    "more_projects": "More projects on my",
     "projects": {
       "auraWeb": {
         "name": "Aura Web",
@@ -31,9 +32,21 @@
         "name": "Status RK",
         "description": "A turnkey corporate website — from design (in collaboration with a designer) to final deployment on the domain. The project was developed in close collaboration with a designer: we jointly worked out page structures, visual solutions, and user scenarios, after which I fully implemented the frontend in React with responsive layout for all device types. The website features a feedback form with email sending to the domain mailbox — handled by a lightweight PHP backend that I also wrote and integrated into the project. Users can fill in contact details, send a message, and it is guaranteed to be delivered to the company's mailbox without using third-party services. After development completion, I deployed the site to the domain, configured hosting, and ensured correct operation of all components in production. As a result, the client received a fully ready-to-use corporate website with clean code, a modern interface, and stable feedback functionality."
       },
+      "sw": {
+        "name": "Simple Wealth",
+        "description": "Simple Wealth is a multi-page, responsive, and cross-browser website built with pure HTML and powered by the Gulp task runner. The project includes several pages with a well-structured layout and semantic markup. The website is fully responsive, ensuring proper display across different devices — from mobile phones to desktops — and has been tested in popular browsers. Gulp is used to automate the development workflow, including file minification, image optimization, preprocessor handling, and efficient project structure management for a smooth and productive development process."
+      },
       "alphaBeat": {
         "name": "AlphaBeat",
         "description": "AlphaBeat is a mini-game built with React and MockAPI that helps train alphabet knowledge in the correct sequence and speed. The player needs to mark all letters in order as quickly as possible. Upon completion, the result — completion time — is displayed. It can be saved to the database and then viewed in the overall results list. There's also an option to restart the game for another attempt and improve your record."
+      },
+      "dashka": {
+        "name": "Dashboard",
+        "description": "Dashboard is an analytical web application built on React using Chart.js for data visualization. The project displays key metrics in the form of interactive graphs and charts (line, bar, pie), allowing you to clearly track the dynamics of indicators. Data can be updated in real time or loaded from an API. Dashboard helps you quickly analyze statistics, compare indicators, and make decisions based on visually presented information."
+      },
+      "uiwave": {
+        "name": "UIWave",
+        "description": "UIWave is a UI experimentation and A/B testing service. It helps you create experiments for UIs and test them on your users. Instead of changing your UI and hoping for the best, you can use UIWave to test your changes and see how they affect your users first. You can do that by allocating a percentage of your users to the experiment and then comparing the results of the experiment to the results of the control group."
       }
     }
   },

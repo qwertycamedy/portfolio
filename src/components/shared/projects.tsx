@@ -1,15 +1,24 @@
 import { Element } from 'react-scroll';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Info } from 'lucide-react';
 
 import { projects } from '@/store';
-import { navLinks } from '@/utils';
-import { Button, Card, Title, TitleSizes } from '@/components/ui';
+import { navLinks, networkLinks } from '@/utils';
+import {
+  Button,
+  Card,
+  Title,
+  TitleSizes,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui';
 import { SectionTitle, SliderNavigation } from '@/components/shared';
 
-import { useSwiperNavigation } from '@/hooks';
+import { useIsMobile, useSwiperNavigation } from '@/hooks';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useRef, useState } from 'react';
 
 export const Projects = () => {
   const {
@@ -22,12 +31,87 @@ export const Projects = () => {
     isEnd,
   } = useSwiperNavigation();
   const { t } = useTranslation();
+  const { isMobile, isTablet } = useIsMobile();
+  const githubPath: string | undefined = networkLinks.find((link) =>
+    link.path.includes('github.com'),
+  )?.path;
+  const tooltipBtnRef = useRef<HTMLButtonElement | null>(null);
+  const [isInfoOpen, setIsInfoOpen] = useState<boolean>(false);
+
+  const onMobInfo = () => {
+    setIsInfoOpen(!isInfoOpen);
+  };
+
+  const onMobInfoOutside = (e: MouseEvent) => {
+    if (
+      tooltipBtnRef.current &&
+      !tooltipBtnRef.current.contains(e.target as Node)
+    ) {
+      setIsInfoOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', onMobInfoOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', onMobInfoOutside);
+    };
+  });
 
   return (
     <Element name={navLinks[1].path} id={navLinks[1].path}>
       <Card className="min-h-0 min-w-0 flex-col gap-10">
         <div className="flex items-center justify-between gap-10">
-          <SectionTitle text={t('projects.title')} />
+          <div className="flex items-start gap-4">
+            <SectionTitle text={t('projects.title')} />
+            {!!githubPath &&
+              (!isMobile && !isTablet ? (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button className="md:mt-1.75">
+                      <Info />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-base">
+                      {t('projects.more_projects')}{' '}
+                      <Link
+                        to={githubPath}
+                        target={'_blank'}
+                        className="text-primary"
+                      >
+                        Github
+                      </Link>
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              ) : (
+                <Tooltip open={isInfoOpen}>
+                  <TooltipTrigger asChild>
+                    <button
+                      className="md:mt-1.75"
+                      onClick={onMobInfo}
+                      ref={tooltipBtnRef}
+                    >
+                      <Info />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-base">
+                      {t('projects.more_projects')}{' '}
+                      <Link
+                        to={githubPath}
+                        target={'_blank'}
+                        className="text-primary"
+                      >
+                        Github
+                      </Link>
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+          </div>
           <SliderNavigation
             onPrev={goPrev}
             onNext={goNext}

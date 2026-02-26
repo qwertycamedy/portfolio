@@ -1,16 +1,21 @@
 export enum EProjectCategories {
   web = 'Web',
-  layout = 'Верстка',
+  html = 'HTML',
   cms = 'CMS',
   wp = 'Wordpress',
   react = 'React.js',
   next = 'Next.js',
-  vanilla = 'Javascript',
   php = 'PHP',
   redux = 'Redux-toolkit',
   tma = 'TMA',
   ton = 'TON',
   mockapi = 'Mock API',
+  chartJs = 'Chart.js',
+  responsive = 'Responsive',
+  gulp = 'GULP',
+  scss = 'SCSS',
+  landing = 'Landing',
+  multipage = 'Multipage',
 }
 
 export type TProject = {
