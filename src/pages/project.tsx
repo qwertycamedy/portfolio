@@ -18,13 +18,14 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 export const Project = () => {
   const { t } = useTranslation();
   const { project_name } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState<TProject | null | undefined>(null);
-  const { swiperRef, handleSlideChange, handleSwiperInit, isBeginning, isEnd } =
+  const { swiperRef, handleSlideChange, isBeginning, isEnd, goToSlide } =
     useSwiperNavigation();
 
   useEffect(() => {
@@ -40,16 +41,6 @@ export const Project = () => {
       }
     }, 750);
   }, [projects]);
-
-  const clickOnImg = (e: React.MouseEvent<HTMLImageElement>) => {
-    const target = e.currentTarget;
-
-    if (!document.fullscreenElement) {
-      target.requestFullscreen().catch((err) => console.error(err));
-    } else {
-      document.exitFullscreen();
-    }
-  };
 
   return (
     <Page className={'relative z-1'} contentCl={'flex-col'} sidebar={false}>
@@ -70,28 +61,34 @@ export const Project = () => {
       <div className="flex flex-col gap-5 xl:grid xl:grid-cols-8">
         {project ? (
           <Card className="col-start-1 col-end-6 min-h-0 min-w-0 flex-col items-center justify-center gap-2 p-4">
-            <Swiper
-              ref={swiperRef}
-              className="mySwiper w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
-              slidesPerView={1}
-              onInit={handleSwiperInit}
-              onSlideChange={handleSlideChange}
+            <PhotoProvider
+              onIndexChange={(index) => goToSlide(index)}
+              loop={false}
             >
-              {project?.imageUrls.map((imageUrl) => (
-                <SwiperSlide key={imageUrl}>
-                  <div className="flex h-full items-center justify-center rounded-2xl">
-                    <img
-                      className="max-h-[50svh] w-full rounded-2xl object-contain"
-                      src={imageUrl}
-                      alt={`${t(project.name)} project | Qwertycamedy Frontend Developer`}
-                      width={300}
-                      height={150}
-                      onClick={clickOnImg}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              <Swiper
+                ref={swiperRef}
+                className="mySwiper w-full max-w-full min-w-0 cursor-grab active:cursor-grabbing"
+                slidesPerView={1}
+                autoHeight={true}
+                onSlideChange={handleSlideChange}
+              >
+                {project?.imageUrls.map((imageUrl) => (
+                  <SwiperSlide key={imageUrl}>
+                    <div className="flex h-full items-center justify-center rounded-2xl">
+                      <PhotoView src={imageUrl}>
+                        <img
+                          className="max-h-[50svh] w-full rounded-2xl object-contain"
+                          src={imageUrl}
+                          alt={`${t(project.name)} project | Qwertycamedy Frontend Developer`}
+                          width={300}
+                          height={150}
+                        />
+                      </PhotoView>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </PhotoProvider>
             {project.imageUrls.length > 1 && (
               <SliderNavigation
                 onPrev={() => swiperRef?.current?.swiper.slidePrev()}
