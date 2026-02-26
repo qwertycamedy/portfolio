@@ -47,7 +47,7 @@ const SwitchersContent = () => {
         isOn={theme === ETheme.dark}
         onChange={() => dispatch(toggleTheme())}
         content={
-          <>{theme === ETheme.dark ? <Sun size={18} /> : <Moon size={18} />}</>
+          <>{theme === ETheme.light ? <Sun size={18} /> : <Moon size={18} />}</>
         }
       />
     </div>

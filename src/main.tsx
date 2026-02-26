@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'react-photo-view/dist/react-photo-view.css';
 
 import { store } from '@/store';
 import '@/utils/i18n/i18n';
