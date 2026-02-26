@@ -15,6 +15,7 @@ export enum EProjectCategories {
 
 export type TProject = {
   imageUrls: string[];
+  path: string;
   name: string;
   description: string;
   categories: EProjectCategories[];

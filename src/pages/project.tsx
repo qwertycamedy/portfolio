@@ -22,7 +22,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 export const Project = () => {
   const { t } = useTranslation();
-  const { project_name } = useParams();
+  const { project_path } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState<TProject | null | undefined>(null);
   const { swiperRef, handleSlideChange, isBeginning, isEnd, goToSlide } =
@@ -30,7 +30,7 @@ export const Project = () => {
 
   useEffect(() => {
     const curProject = projects.find(
-      (project) => project.name === project_name,
+      (project) => project.path === project_path,
     );
 
     setTimeout(() => {

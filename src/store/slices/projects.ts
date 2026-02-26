@@ -31,6 +31,7 @@ export const projects: TProject[] = [
       project_2_img_5,
       project_2_img_6,
     ],
+    path: 'aura_web',
     name: 'projects.projects.auraWeb.name',
     description: 'projects.projects.auraWeb.description',
     categories: [
@@ -43,6 +44,7 @@ export const projects: TProject[] = [
   },
   {
     imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+    path: 'aura_tma',
     name: 'projects.projects.auraTma.name',
     description: 'projects.projects.auraTma.description',
     categories: [
@@ -56,6 +58,7 @@ export const projects: TProject[] = [
   },
   {
     imageUrls: [project_3_img_0, project_3_img_1, project_3_img_2],
+    path: 'status_rk',
     name: 'projects.projects.statusRk.name',
     description: 'projects.projects.statusRk.description',
     categories: [
@@ -74,6 +77,7 @@ export const projects: TProject[] = [
       project_4_img_3,
       project_4_img_4,
     ],
+    path: 'alpha_beat',
     name: 'projects.projects.alphaBeat.name',
     description: 'projects.projects.alphaBeat.description',
     categories: [

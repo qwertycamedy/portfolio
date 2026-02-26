@@ -61,7 +61,7 @@ export const Projects = () => {
             >
               <Link
                 className="flex flex-1 flex-col gap-4.5 pb-8"
-                to={`/projects/${project.name}`}
+                to={`/projects/${project.path}`}
               >
                 <img
                   className="h-37.5 w-full rounded-[22px] object-cover"
