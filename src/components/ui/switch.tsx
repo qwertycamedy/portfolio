@@ -18,7 +18,7 @@ export const Switch = ({
   return (
     <label
       className={cn(
-        'relative flex h-5 w-12 items-center rounded-full pl-1 transition-colors duration-200',
+        'relative flex h-5 w-12 cursor-pointer items-center rounded-full pl-1 transition-colors duration-200',
         'bg-secondary/50 dark:bg-secondary-foreground/10',
         className,
         {},
