@@ -3,20 +3,20 @@ import { CircleGauge, Grid2X2, RotateCcw, Smile } from 'lucide-react';
 
 export const networkLinks: networkLink[] = [
   {
-    path: 'https://qwertycamedy-portfolio.vercel.app/CV_Frontend_Adil_Kairbekov.pdf',
-    text: 'cv',
+    path: 'networkLinks.cv.path',
+    text: 'networkLinks.cv.text',
   },
   {
-    path: 'https://github.com/qwertycamedy',
-    text: 'git',
+    path: 'networkLinks.git.path',
+    text: 'networkLinks.git.text',
   },
   {
-    path: 'https://t.me/qwertycamedy',
-    text: 'tg',
+    path: 'networkLinks.tg.path',
+    text: 'networkLinks.tg.text',
   },
   {
-    path: 'https://www.weblancer.net/users/qwertycamedy/',
-    text: 'w',
+    path: 'networkLinks.w.path',
+    text: 'networkLinks.w.text',
   },
 ];
 

@@ -4,6 +4,24 @@
     "title": "Adil Kairbekov",
     "subtitle": "Frontend Developer"
   },
+  "networkLinks": {
+    "cv": {
+      "path": "https://qwertycamedy-portfolio.vercel.app/CV_Frontend_Adil_Kairbekov_eng.pdf",
+      "text": "cv"
+    },
+    "git": {
+      "path": "https://github.com/qwertycamedy",
+      "text": "git"
+    },
+    "tg": {
+      "path": "https://t.me/qwertycamedy",
+      "text": "tg"
+    },
+    "w": {
+      "path": "https://www.weblancer.net/users/qwertycamedy/",
+      "text": "w"
+    }
+  },
   "navLinks": {
     "hero": "Home",
     "works": "Portfolio",
