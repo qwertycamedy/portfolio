@@ -16,6 +16,11 @@ export enum EProjectCategories {
   scss = 'SCSS',
   landing = 'Landing',
   multipage = 'Multipage',
+  zod='Zod',
+  rhf='React Hook Form',
+  tailwind='Tailwind',
+  cssModules='Css Modules',
+  dnd='Drag&Drop'
 }
 
 export type TProject = {

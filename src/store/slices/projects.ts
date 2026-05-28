@@ -47,6 +47,12 @@ import project_uiwave_img_4 from '@/assets/img/project_uiwave_4.webp';
 import project_uiwave_img_5 from '@/assets/img/project_uiwave_5.webp';
 import project_uiwave_img_6 from '@/assets/img/project_uiwave_6.webp';
 
+import project_artisan_img_1 from '@/assets/img/project_artisan_1.webp';
+import project_artisan_img_2 from '@/assets/img/project_artisan_2.webp';
+import project_artisan_img_3 from '@/assets/img/project_artisan_3.webp';
+import project_artisan_img_4 from '@/assets/img/project_artisan_4.webp';
+import project_artisan_img_5 from '@/assets/img/project_artisan_5.webp';
+import project_artisan_img_6 from '@/assets/img/project_artisan_6.webp';
 
 export const projects: TProject[] = [
   {
@@ -82,6 +88,30 @@ export const projects: TProject[] = [
     ],
     githubUrl: '',
     siteUrl: 'https://t.me/auraxcryptobot',
+  },
+  {
+    imageUrls: [
+      project_artisan_img_1,
+      project_artisan_img_2,
+      project_artisan_img_3,
+      project_artisan_img_4,
+      project_artisan_img_5,
+      project_artisan_img_6,
+    ],
+    path: 'artisan',
+    name: 'projects.projects.artisan.name',
+    description: 'projects.projects.artisan.description',
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.next,
+      EProjectCategories.redux,
+      EProjectCategories.rhf,
+      EProjectCategories.zod,
+      EProjectCategories.tailwind,
+      EProjectCategories.responsive,
+    ],
+    githubUrl: 'https://github.com/qwertycamedy/artisan-kiln',
+    siteUrl: 'https://artisan-kiln.vercel.app/',
   },
   {
     imageUrls: [project_3_img_0, project_3_img_1, project_3_img_2],
