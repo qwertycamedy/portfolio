@@ -54,7 +54,33 @@ import project_artisan_img_4 from '@/assets/img/project_artisan_4.webp';
 import project_artisan_img_5 from '@/assets/img/project_artisan_5.webp';
 import project_artisan_img_6 from '@/assets/img/project_artisan_6.webp';
 
+import project_qcGamesHub_img_0 from '@/assets/img/project_qcGamesHub_0.webp';
+import project_qcGamesHub_img_1 from '@/assets/img/project_qcGamesHub_1.webp';
+import project_qcGamesHub_img_2 from '@/assets/img/project_qcGamesHub_2.webp';
+import project_qcGamesHub_img_3 from '@/assets/img/project_qcGamesHub_3.webp';
+import project_qcGamesHub_img_4 from '@/assets/img/project_qcGamesHub_4.webp';
+
 export const projects: TProject[] = [
+  {
+    imageUrls: [
+      project_qcGamesHub_img_0,
+      project_qcGamesHub_img_1,
+      project_qcGamesHub_img_2,
+      project_qcGamesHub_img_3,
+      project_qcGamesHub_img_4,
+    ],
+    path: 'qc_games_hub',
+    name: 'projects.projects.qcGamesHub.name',
+    description: 'projects.projects.qcGamesHub.description',
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.games,
+      EProjectCategories.vanilla,
+      EProjectCategories.responsive,
+    ],
+    githubUrl: 'https://github.com/qwertycamedy/qc_games_hub',
+    siteUrl: 'https://qc-games-hub.vercel.app/',
+  },
   {
     imageUrls: [
       project_2_img_0,

@@ -1,6 +1,7 @@
 export enum EProjectCategories {
   web = 'Web',
   html = 'HTML',
+  vanilla = 'Vanilla JS',
   cms = 'CMS',
   wp = 'Wordpress',
   react = 'React.js',
@@ -16,11 +17,12 @@ export enum EProjectCategories {
   scss = 'SCSS',
   landing = 'Landing',
   multipage = 'Multipage',
-  zod='Zod',
-  rhf='React Hook Form',
-  tailwind='Tailwind',
-  cssModules='Css Modules',
-  dnd='Drag&Drop'
+  zod = 'Zod',
+  rhf = 'React Hook Form',
+  tailwind = 'Tailwind',
+  cssModules = 'Css Modules',
+  dnd = 'Drag&Drop',
+  games = 'Games',
 }
 
 export type TProject = {
