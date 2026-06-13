@@ -23,6 +23,7 @@ export enum EProjectCategories {
   cssModules = 'Css Modules',
   dnd = 'Drag&Drop',
   games = 'Games',
+  tilda = 'Tilda',
 }
 
 export type TProject = {

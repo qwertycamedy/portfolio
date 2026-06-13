@@ -60,7 +60,40 @@ import project_qcGamesHub_img_2 from '@/assets/img/project_qcGamesHub_2.webp';
 import project_qcGamesHub_img_3 from '@/assets/img/project_qcGamesHub_3.webp';
 import project_qcGamesHub_img_4 from '@/assets/img/project_qcGamesHub_4.webp';
 
+import project_lerree_img_0 from '@/assets/img/project_lerree_0.webp';
+import project_lerree_img_1 from '@/assets/img/project_lerree_1.webp';
+import project_lerree_img_2 from '@/assets/img/project_lerree_2.webp';
+import project_lerree_img_3 from '@/assets/img/project_lerree_3.webp';
+import project_lerree_img_4 from '@/assets/img/project_lerree_4.webp';
+import project_lerree_img_5 from '@/assets/img/project_lerree_5.webp';
+import project_lerree_img_6 from '@/assets/img/project_lerree_6.webp';
+import project_lerree_img_7 from '@/assets/img/project_lerree_7.webp';
+import project_lerree_img_8 from '@/assets/img/project_lerree_8.webp';
+
 export const projects: TProject[] = [
+  {
+    imageUrls: [
+      project_lerree_img_0,
+      project_lerree_img_1,
+      project_lerree_img_2,
+      project_lerree_img_3,
+      project_lerree_img_4,
+      project_lerree_img_5,
+      project_lerree_img_6,
+      project_lerree_img_7,
+      project_lerree_img_8,
+    ],
+    path: 'lerree',
+    name: 'projects.projects.lerree.name',
+    description: 'projects.projects.lerree.description',
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.tilda,
+      EProjectCategories.vanilla,
+      EProjectCategories.responsive,
+    ],
+    siteUrl: 'https://lerree.ru/',
+  },
   {
     imageUrls: [
       project_qcGamesHub_img_0,
