@@ -25,7 +25,7 @@ export const Hero = () => {
         {isMobile || isTablet ? (
           <NetworkLinks />
         ) : (
-          <Link to={networkLinks[0].path} target="blank">
+          <Link to={t(networkLinks[0].path)} target="blank">
             <Button className="w-max px-5 py-3">{t('hero.button')}</Button>
           </Link>
         )}
