@@ -70,7 +70,89 @@ import project_lerree_img_6 from '@/assets/img/project_lerree_6.webp';
 import project_lerree_img_7 from '@/assets/img/project_lerree_7.webp';
 import project_lerree_img_8 from '@/assets/img/project_lerree_8.webp';
 
+import project_ecosave_img_1 from '@/assets/img/project_ecosave-1.webp';
+import project_ecosave_img_2 from '@/assets/img/project_ecosave-2.webp';
+import project_ecosave_img_3 from '@/assets/img/project_ecosave-3.webp';
+
 export const projects: TProject[] = [
+  {
+    imageUrls: [
+      project_2_img_0,
+      project_2_img_2,
+      project_2_img_3,
+      project_2_img_4,
+      project_2_img_5,
+      project_2_img_6,
+    ],
+    path: 'aura_web',
+    name: 'projects.projects.auraWeb.name',
+    description: 'projects.projects.auraWeb.description',
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.ton,
+      EProjectCategories.react,
+      EProjectCategories.redux,
+    ],
+    siteUrl: 'https://web.cdn.auraxterminal.com/',
+  },
+  {
+    imageUrls: [
+      project_ecosave_img_1,
+      project_ecosave_img_2,
+      project_ecosave_img_3,
+    ],
+    path: 'ecosave',
+    name: 'projects.projects.ecosave.name',
+    description: 'projects.projects.ecosave.description',
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.multilang,
+      EProjectCategories.responsive,
+      EProjectCategories.vanilla,
+      EProjectCategories.tilda,
+    ],
+    siteUrl: 'https://ecosave.kz',
+  },
+  {
+    imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
+    path: 'aura_tma',
+    name: 'projects.projects.auraTma.name',
+    description: 'projects.projects.auraTma.description',
+    categories: [
+      EProjectCategories.tma,
+      EProjectCategories.ton,
+      EProjectCategories.react,
+      EProjectCategories.redux,
+    ],
+    githubUrl: '',
+    siteUrl: 'https://t.me/auraxcryptobot',
+  },
+  {
+    imageUrls: [
+      project_sw_img_0,
+      project_sw_img_1,
+      project_sw_img_2,
+      project_sw_img_3,
+      project_sw_img_4,
+      project_sw_img_5,
+      project_sw_img_6,
+      project_sw_img_7,
+      project_sw_img_8,
+      project_sw_img_9,
+    ],
+    path: 'simple_wealth',
+    name: 'projects.projects.sw.name',
+    description: 'projects.projects.sw.description',
+    categories: [
+      EProjectCategories.web,
+      EProjectCategories.gulp,
+      EProjectCategories.scss,
+      EProjectCategories.multipage,
+      EProjectCategories.responsive,
+    ],
+    githubUrl: 'https://github.com/qwertycamedy/simple-wealth',
+    siteUrl: 'https://simple-wealth.vercel.app/',
+  },
   {
     imageUrls: [
       project_lerree_img_0,
@@ -116,40 +198,6 @@ export const projects: TProject[] = [
   },
   {
     imageUrls: [
-      project_2_img_0,
-      project_2_img_2,
-      project_2_img_3,
-      project_2_img_4,
-      project_2_img_5,
-      project_2_img_6,
-    ],
-    path: 'aura_web',
-    name: 'projects.projects.auraWeb.name',
-    description: 'projects.projects.auraWeb.description',
-    categories: [
-      EProjectCategories.web,
-      EProjectCategories.ton,
-      EProjectCategories.react,
-      EProjectCategories.redux,
-    ],
-    siteUrl: 'https://web.cdn.auraxterminal.com/',
-  },
-  {
-    imageUrls: [project_1_img_0, project_1_img_1, project_1_img_2],
-    path: 'aura_tma',
-    name: 'projects.projects.auraTma.name',
-    description: 'projects.projects.auraTma.description',
-    categories: [
-      EProjectCategories.tma,
-      EProjectCategories.ton,
-      EProjectCategories.react,
-      EProjectCategories.redux,
-    ],
-    githubUrl: '',
-    siteUrl: 'https://t.me/auraxcryptobot',
-  },
-  {
-    imageUrls: [
       project_artisan_img_1,
       project_artisan_img_2,
       project_artisan_img_3,
@@ -184,32 +232,6 @@ export const projects: TProject[] = [
     ],
     githubUrl: 'https://github.com/qwertycamedy/status_rk_react',
     siteUrl: 'https://statusrk.kz/',
-  },
-  {
-    imageUrls: [
-      project_sw_img_0,
-      project_sw_img_1,
-      project_sw_img_2,
-      project_sw_img_3,
-      project_sw_img_4,
-      project_sw_img_5,
-      project_sw_img_6,
-      project_sw_img_7,
-      project_sw_img_8,
-      project_sw_img_9,
-    ],
-    path: 'simple_wealth',
-    name: 'projects.projects.sw.name',
-    description: 'projects.projects.sw.description',
-    categories: [
-      EProjectCategories.web,
-      EProjectCategories.gulp,
-      EProjectCategories.scss,
-      EProjectCategories.multipage,
-      EProjectCategories.responsive,
-    ],
-    githubUrl: 'https://github.com/qwertycamedy/simple-wealth',
-    siteUrl: 'https://simple-wealth.vercel.app/',
   },
   {
     imageUrls: [

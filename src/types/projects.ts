@@ -24,6 +24,7 @@ export enum EProjectCategories {
   dnd = 'Drag&Drop',
   games = 'Games',
   tilda = 'Tilda',
+  multilang = "Multilang"
 }
 
 export type TProject = {
