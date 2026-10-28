@@ -38,6 +38,10 @@
     "more": "More",
     "more_projects": "More projects on my",
     "projects": {
+      "taskTrackerCli": {
+        "name": "Task Tracker CLI",
+        "description": "I developed a Java command-line application for task management with data persistence in a JSON file. The application allows users to create, update, and delete tasks, view the full task list, and filter tasks by priority, status, and deadline. The project follows a structured architecture with separate model, repository, and service layers. Jackson is used for JSON processing, while the Java Time API handles date operations. Automated tests using JUnit 5 were also implemented to verify the application's core functionality."
+      },
       "ecosave": {
         "name": "EcoSave",
         "description": "I fully developed a modern, multi-page, and responsive corporate website for the company EcoSave on the Tilda platform, utilizing vanilla JavaScript for custom functionality. The website showcases biological solutions for agriculture and features all essential sections and pages: a comprehensive product catalog with detailed product cards, a subsidization guide, a company blog, client reviews, an 'About Us' section, and contact details. A full trilingual architecture was implemented to cater to a multilingual audience. I also configured interactive feedback forms and a streamlined product purchase inquiry workflow with custom validation and seamless submission. Special attention was paid to mobile responsiveness: all custom layouts, navigation menus, product grids, and modal windows were manually adapted across various screen resolutions to ensure top-tier performance, visual consistency, and an intuitive user experience."

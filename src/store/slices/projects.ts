@@ -74,7 +74,22 @@ import project_ecosave_img_1 from '@/assets/img/project_ecosave-1.webp';
 import project_ecosave_img_2 from '@/assets/img/project_ecosave-2.webp';
 import project_ecosave_img_3 from '@/assets/img/project_ecosave-3.webp';
 
+import project_taskTracker_img_1 from '@/assets/img/project_taskTracker_1.webp';
+
 export const projects: TProject[] = [
+  {
+    imageUrls: [project_taskTracker_img_1],
+    path: 'taskTrackerCli',
+    name: 'projects.projects.taskTrackerCli.name',
+    description: 'projects.projects.taskTrackerCli.description',
+    categories: [
+      EProjectCategories.java,
+      EProjectCategories.maven,
+      EProjectCategories.tests,
+      EProjectCategories.junit,
+    ],
+    githubUrl: 'https://github.com/qwertycamedy/task-tracker-cli',
+  },
   {
     imageUrls: [
       project_2_img_0,

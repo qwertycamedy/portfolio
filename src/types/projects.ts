@@ -24,7 +24,11 @@ export enum EProjectCategories {
   dnd = 'Drag&Drop',
   games = 'Games',
   tilda = 'Tilda',
-  multilang = "Multilang"
+  multilang = 'Multilang',
+  java = 'Java',
+  maven = 'Maven',
+  tests = 'Tests',
+  junit = 'JUnit',
 }
 
 export type TProject = {
